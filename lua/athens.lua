@@ -67,44 +67,85 @@ Athens.config = {
 -- main athens color palette
 ---@class AthensPalette
 Athens.palette = {
-  dark0 = "#282828",
-  dark1 = "#3c3836",
-  dark2 = "#504945",
-  dark3 = "#665c54",
-  dark4 = "#7c6f64",
-  light0 = "#fbf1c7",
-  light1 = "#ebdbb2",
-  light2 = "#d5c4a1",
-  light3 = "#bdae93",
-  light4 = "#a89984",
-  bright_red = "#fb4934",
-  bright_green = "#b8bb26",
-  bright_yellow = "#fabd2f",
-  bright_blue = "#83a598",
-  bright_purple = "#d3869b",
-  bright_aqua = "#8ec07c",
-  bright_orange = "#fe8019",
-  neutral_red = "#cc241d",
-  neutral_green = "#98971a",
-  neutral_yellow = "#d79921",
-  neutral_blue = "#458588",
-  neutral_purple = "#b16286",
-  neutral_aqua = "#689d6a",
-  neutral_orange = "#d65d0e",
-  faded_red = "#9d0006",
-  faded_green = "#79740e",
-  faded_yellow = "#b57614",
-  faded_blue = "#076678",
-  faded_purple = "#8f3f71",
-  faded_aqua = "#427b58",
-  faded_orange = "#af3a03",
-  dark_red = "#722529",
-  light_red = "#fc9487",
-  dark_green = "#62693e",
-  light_green = "#d5d39b",
-  dark_aqua = "#49503b",
-  light_aqua = "#e8e5b5",
-  gray = "#928374",
+      bg0 = "#090909", --[[manually darkened]]
+      bg1 = "#1c1b19",
+      bg2 = "#242320",
+      bg3 = "#2c2b28",
+      bg4 = "#353430",
+      fg1 = "#958f88",
+      fg2 = "#7b766f",
+      fg3 = "#615d58",
+      fg4 = "#494642",
+      cursor = "#4f643c",
+      modeline = "#272f30",
+      active1 = "#303d3e",
+      active2 = "#2c3637",
+      inactive1 = "#232829",
+      inactive2 = "#1e2122",
+      clock12 = "#a28e59",
+      clock01 = "#899659",
+      clock02 = "#5a9f58",
+      clock03 = "#5c9c84",
+      clock04 = "#5e9a97",
+      clock05 = "#6098a8",
+      clock06 = "#6592ca",
+      clock07 = "#9c82d3",
+      clock08 = "#d067d2",
+      clock09 = "#d86aa7",
+      clock10 = "#dc6e79",
+      clock11 = "#bf8259",
+      hi1 = "#b0b037",
+      hi2 = "#3bbdac",
+      err = "#c8575c",  --[[was error]]
+      warning = "#817c55",
+      success = "#00b953",
+      var = "#958f88",
+      func = "#b65a52",
+      builtin = "#729599",
+      keyword = "#729599",
+      const = "#729599",
+      comment = "#536e6f",
+      str = "#6e9976",
+      ltype = "#a28c6d", --[[ was type ]]
+      preprocessor = "#5d9a91",
+  dark0 = "#282828", --[[fix]]
+  dark1 = "#3c3836", --[[fix]]
+  dark2 = "#504945", --[[fix]]
+  dark3 = "#665c54", --[[fix]]
+  dark4 = "#7c6f64", --[[fix]]
+  light0 = "#fbf1c7", --[[fix]]
+  light1 = "#ebdbb2", --[[fix]]
+  light2 = "#d5c4a1", --[[fix]]
+  light3 = "#bdae93", --[[fix]]
+  light4 = "#a89984", --[[fix]]
+  bright_red = "#fb4934", --[[fix]]
+  bright_green = "#b8bb26", --[[fix]]
+  bright_yellow = "#fabd2f", --[[fix]]
+  bright_blue = "#83a598", --[[fix]]
+  bright_purple = "#d3869b", --[[fix]]
+  bright_aqua = "#8ec07c", --[[fix]]
+  bright_orange = "#fe8019", --[[fix]]
+  neutral_red = "#cc241d", --[[fix]]
+  neutral_green = "#98971a", --[[fix]]
+  neutral_yellow = "#d79921", --[[fix]]
+  neutral_blue = "#458588", --[[fix]]
+  neutral_purple = "#b16286", --[[fix]]
+  neutral_aqua = "#689d6a", --[[fix]]
+  neutral_orange = "#d65d0e", --[[fix]]
+  faded_red = "#9d0006", --[[fix]]
+  faded_green = "#79740e", --[[fix]]
+  faded_yellow = "#b57614", --[[fix]]
+  faded_blue = "#076678", --[[fix]]
+  faded_purple = "#8f3f71", --[[fix]]
+  faded_aqua = "#427b58", --[[fix]]
+  faded_orange = "#af3a03", --[[fix]]
+  dark_red = "#722529", --[[fix]]
+  light_red = "#fc9487", --[[fix]]
+  dark_green = "#62693e", --[[fix]]
+  light_green = "#d5d39b", --[[fix]]
+  dark_aqua = "#49503b", --[[fix]]
+  light_aqua = "#e8e5b5", --[[fix]]
+  gray = "#928374", --[[fix]]
 }
 
 -- get a hex list of athens colors based on current bg and constrast config
@@ -120,62 +161,62 @@ local function get_colors()
 
   local color_groups = {
     dark = {
-      bg0 = p.dark0,
-      bg1 = p.dark1,
-      bg2 = p.dark2,
-      bg3 = p.dark3,
-      bg4 = p.dark4,
-      fg0 = p.light0,
-      fg1 = p.light1,
-      fg2 = p.light2,
-      fg3 = p.light3,
-      fg4 = p.light4,
-      red = p.bright_red,
-      green = p.bright_green,
-      yellow = p.bright_yellow,
-      blue = p.bright_blue,
-      purple = p.bright_purple,
-      aqua = p.bright_aqua,
-      orange = p.bright_orange,
-      neutral_red = p.neutral_red,
-      neutral_green = p.neutral_green,
-      neutral_yellow = p.neutral_yellow,
-      neutral_blue = p.neutral_blue,
-      neutral_purple = p.neutral_purple,
-      neutral_aqua = p.neutral_aqua,
-      dark_red = p.dark_red,
-      dark_green = p.dark_green,
-      dark_aqua = p.dark_aqua,
-      gray = p.gray,
+      bg0 = p.dark0, --[[fix]]
+      bg1 = p.dark1, --[[fix]]
+      bg2 = p.dark2, --[[fix]]
+      bg3 = p.dark3, --[[fix]]
+      bg4 = p.dark4, --[[fix]]
+      fg0 = p.light0, --[[fix]]
+      fg1 = p.light1, --[[fix]]
+      fg2 = p.light2, --[[fix]]
+      fg3 = p.light3, --[[fix]]
+      fg4 = p.light4, --[[fix]]
+      red = p.bright_red, --[[fix]]
+      green = p.bright_green, --[[fix]]
+      yellow = p.bright_yellow, --[[fix]]
+      blue = p.bright_blue, --[[fix]]
+      purple = p.bright_purple, --[[fix]]
+      aqua = p.bright_aqua, --[[fix]]
+      orange = p.bright_orange, --[[fix]]
+      neutral_red = p.neutral_red, --[[fix]]
+      neutral_green = p.neutral_green, --[[fix]]
+      neutral_yellow = p.neutral_yellow, --[[fix]]
+      neutral_blue = p.neutral_blue, --[[fix]]
+      neutral_purple = p.neutral_purple, --[[fix]]
+      neutral_aqua = p.neutral_aqua, --[[fix]]
+      dark_red = p.dark_red, --[[fix]]
+      dark_green = p.dark_green, --[[fix]]
+      dark_aqua = p.dark_aqua, --[[fix]]
+      gray = p.gray, --[[fix]]
     },
     light = {
-      bg0 = p.light0,
-      bg1 = p.light1,
-      bg2 = p.light2,
-      bg3 = p.light3,
-      bg4 = p.light4,
-      fg0 = p.dark0,
-      fg1 = p.dark1,
-      fg2 = p.dark2,
-      fg3 = p.dark3,
-      fg4 = p.dark4,
-      red = p.faded_red,
-      green = p.faded_green,
-      yellow = p.faded_yellow,
-      blue = p.faded_blue,
-      purple = p.faded_purple,
-      aqua = p.faded_aqua,
-      orange = p.faded_orange,
-      neutral_red = p.neutral_red,
-      neutral_green = p.neutral_green,
-      neutral_yellow = p.neutral_yellow,
-      neutral_blue = p.neutral_blue,
-      neutral_purple = p.neutral_purple,
-      neutral_aqua = p.neutral_aqua,
-      dark_red = p.light_red,
-      dark_green = p.light_green,
-      dark_aqua = p.light_aqua,
-      gray = p.gray,
+      bg0 = p.light0, --[[fix]]
+      bg1 = p.light1, --[[fix]]
+      bg2 = p.light2, --[[fix]]
+      bg3 = p.light3, --[[fix]]
+      bg4 = p.light4, --[[fix]]
+      fg0 = p.dark0, --[[fix]]
+      fg1 = p.dark1, --[[fix]]
+      fg2 = p.dark2, --[[fix]]
+      fg3 = p.dark3, --[[fix]]
+      fg4 = p.dark4, --[[fix]]
+      red = p.faded_red, --[[fix]]
+      green = p.faded_green, --[[fix]]
+      yellow = p.faded_yellow, --[[fix]]
+      blue = p.faded_blue, --[[fix]]
+      purple = p.faded_purple, --[[fix]]
+      aqua = p.faded_aqua, --[[fix]]
+      orange = p.faded_orange, --[[fix]]
+      neutral_red = p.neutral_red, --[[fix]]
+      neutral_green = p.neutral_green, --[[fix]]
+      neutral_yellow = p.neutral_yellow, --[[fix]]
+      neutral_blue = p.neutral_blue, --[[fix]]
+      neutral_purple = p.neutral_purple, --[[fix]]
+      neutral_aqua = p.neutral_aqua, --[[fix]]
+      dark_red = p.light_red, --[[fix]]
+      dark_green = p.light_green, --[[fix]]
+      dark_aqua = p.light_aqua, --[[fix]]
+      gray = p.gray, --[[fix]]
     },
   }
 
@@ -188,22 +229,22 @@ local function get_groups()
 
   if config.terminal_colors then
     local term_colors = {
-      colors.bg0,
-      colors.neutral_red,
-      colors.neutral_green,
-      colors.neutral_yellow,
-      colors.neutral_blue,
-      colors.neutral_purple,
-      colors.neutral_aqua,
-      colors.fg4,
-      colors.gray,
-      colors.red,
-      colors.green,
-      colors.yellow,
-      colors.blue,
-      colors.purple,
-      colors.aqua,
-      colors.fg1,
+      colors.bg0, --[[fix]]
+      colors.neutral_red, --[[fix]]
+      colors.neutral_green, --[[fix]]
+      colors.neutral_yellow, --[[fix]]
+      colors.neutral_blue, --[[fix]]
+      colors.neutral_purple, --[[fix]]
+      colors.neutral_aqua, --[[fix]]
+      colors.fg4, --[[fix]]
+      colors.gray, --[[fix]]
+      colors.red, --[[fix]]
+      colors.green, --[[fix]]
+      colors.yellow, --[[fix]]
+      colors.blue, --[[fix]]
+      colors.purple, --[[fix]]
+      colors.aqua, --[[fix]]
+      colors.fg1, --[[fix]]
     }
     for index, value in ipairs(term_colors) do
       vim.g["terminal_color_" .. index - 1] = value
@@ -211,325 +252,325 @@ local function get_groups()
   end
 
   local groups = {
-    AthensFg0 = { fg = colors.fg0 },
-    AthensFg1 = { fg = colors.fg1 },
-    AthensFg2 = { fg = colors.fg2 },
-    AthensFg3 = { fg = colors.fg3 },
-    AthensFg4 = { fg = colors.fg4 },
-    AthensGray = { fg = colors.gray },
-    AthensBg0 = { fg = colors.bg0 },
-    AthensBg1 = { fg = colors.bg1 },
-    AthensBg2 = { fg = colors.bg2 },
-    AthensBg3 = { fg = colors.bg3 },
-    AthensBg4 = { fg = colors.bg4 },
-    AthensRed = { fg = colors.red },
-    AthensRedBold = { fg = colors.red, bold = config.bold },
-    AthensGreen = { fg = colors.green },
-    AthensGreenBold = { fg = colors.green, bold = config.bold },
-    AthensYellow = { fg = colors.yellow },
-    AthensYellowBold = { fg = colors.yellow, bold = config.bold },
-    AthensBlue = { fg = colors.blue },
-    AthensBlueBold = { fg = colors.blue, bold = config.bold },
-    AthensPurple = { fg = colors.purple },
-    AthensPurpleBold = { fg = colors.purple, bold = config.bold },
-    AthensAqua = { fg = colors.aqua },
-    AthensAquaBold = { fg = colors.aqua, bold = config.bold },
-    AthensOrange = { fg = colors.orange },
-    AthensOrangeBold = { fg = colors.orange, bold = config.bold },
-    AthensRedSign = config.transparent_mode and { fg = colors.red, reverse = config.invert_signs }
-      or { fg = colors.red, bg = colors.bg1, reverse = config.invert_signs },
-    AthensGreenSign = config.transparent_mode and { fg = colors.green, reverse = config.invert_signs }
-      or { fg = colors.green, bg = colors.bg1, reverse = config.invert_signs },
-    AthensYellowSign = config.transparent_mode and { fg = colors.yellow, reverse = config.invert_signs }
-      or { fg = colors.yellow, bg = colors.bg1, reverse = config.invert_signs },
-    AthensBlueSign = config.transparent_mode and { fg = colors.blue, reverse = config.invert_signs }
-      or { fg = colors.blue, bg = colors.bg1, reverse = config.invert_signs },
-    AthensPurpleSign = config.transparent_mode and { fg = colors.purple, reverse = config.invert_signs }
-      or { fg = colors.purple, bg = colors.bg1, reverse = config.invert_signs },
-    AthensAquaSign = config.transparent_mode and { fg = colors.aqua, reverse = config.invert_signs }
-      or { fg = colors.aqua, bg = colors.bg1, reverse = config.invert_signs },
-    AthensOrangeSign = config.transparent_mode and { fg = colors.orange, reverse = config.invert_signs }
-      or { fg = colors.orange, bg = colors.bg1, reverse = config.invert_signs },
-    AthensRedUnderline = { undercurl = config.undercurl, sp = colors.red },
-    AthensGreenUnderline = { undercurl = config.undercurl, sp = colors.green },
-    AthensYellowUnderline = { undercurl = config.undercurl, sp = colors.yellow },
-    AthensBlueUnderline = { undercurl = config.undercurl, sp = colors.blue },
-    AthensPurpleUnderline = { undercurl = config.undercurl, sp = colors.purple },
-    AthensAquaUnderline = { undercurl = config.undercurl, sp = colors.aqua },
-    AthensOrangeUnderline = { undercurl = config.undercurl, sp = colors.orange },
-    Normal = config.transparent_mode and { fg = colors.fg1, bg = nil } or { fg = colors.fg1, bg = colors.bg0 },
-    NormalFloat = config.transparent_mode and { fg = colors.fg1, bg = nil } or { fg = colors.fg1, bg = colors.bg1 },
-    NormalNC = config.dim_inactive and { fg = colors.fg0, bg = colors.bg1 } or { link = "Normal" },
-    CursorLine = { bg = colors.bg1 },
-    CursorColumn = { link = "CursorLine" },
-    TabLineFill = { fg = colors.bg4, bg = colors.bg1, reverse = config.invert_tabline },
-    TabLineSel = { fg = colors.green, bg = colors.bg1, reverse = config.invert_tabline },
-    TabLine = { link = "TabLineFill" },
-    MatchParen = { bg = colors.bg3, bold = config.bold },
-    ColorColumn = { bg = colors.bg1 },
-    Conceal = { fg = colors.blue },
-    CursorLineNr = { fg = colors.yellow, bg = colors.bg1 },
-    NonText = { link = "AthensBg2" },
-    SpecialKey = { link = "AthensFg4" },
-    Visual = { bg = colors.bg3, reverse = config.invert_selection },
-    VisualNOS = { link = "Visual" },
-    Search = { fg = colors.yellow, bg = colors.bg0, reverse = config.inverse },
-    IncSearch = { fg = colors.orange, bg = colors.bg0, reverse = config.inverse },
-    CurSearch = { link = "IncSearch" },
-    QuickFixLine = { link = "AthensPurple" },
-    Underlined = { fg = colors.blue, underline = config.underline },
-    StatusLine = { fg = colors.bg2, bg = colors.fg1, reverse = config.inverse },
-    StatusLineNC = { fg = colors.bg1, bg = colors.fg4, reverse = config.inverse },
-    WinBar = { fg = colors.fg4, bg = colors.bg0 },
-    WinBarNC = { fg = colors.fg3, bg = colors.bg1 },
-    WinSeparator = config.transparent_mode and { fg = colors.bg3, bg = nil } or { fg = colors.bg3, bg = colors.bg0 },
-    WildMenu = { fg = colors.blue, bg = colors.bg2, bold = config.bold },
-    Directory = { link = "AthensGreenBold" },
-    Title = { link = "AthensGreenBold" },
-    ErrorMsg = { fg = colors.bg0, bg = colors.red, bold = config.bold },
-    MoreMsg = { link = "AthensYellowBold" },
-    ModeMsg = { link = "AthensYellowBold" },
-    Question = { link = "AthensOrangeBold" },
-    WarningMsg = { link = "AthensRedBold" },
-    LineNr = { fg = colors.bg4 },
-    SignColumn = config.transparent_mode and { bg = nil } or { bg = colors.bg1 },
-    Folded = { fg = colors.gray, bg = colors.bg1, italic = config.italic.folds },
-    FoldColumn = config.transparent_mode and { fg = colors.gray, bg = nil } or { fg = colors.gray, bg = colors.bg1 },
-    Cursor = { reverse = config.inverse },
-    vCursor = { link = "Cursor" },
-    iCursor = { link = "Cursor" },
-    lCursor = { link = "Cursor" },
-    Special = { link = "AthensOrange" },
-    Comment = { fg = colors.gray, italic = config.italic.comments },
-    Todo = { fg = colors.bg0, bg = colors.yellow, bold = config.bold, italic = config.italic.comments },
-    Done = { fg = colors.orange, bold = config.bold, italic = config.italic.comments },
-    Error = { fg = colors.red, bold = config.bold, reverse = config.inverse },
-    Statement = { link = "AthensRed" },
-    Conditional = { link = "AthensRed" },
-    Repeat = { link = "AthensRed" },
-    Label = { link = "AthensRed" },
-    Exception = { link = "AthensRed" },
-    Operator = { fg = colors.orange, italic = config.italic.operators },
-    Keyword = { link = "AthensRed" },
-    Identifier = { link = "AthensBlue" },
-    Function = { link = "AthensGreenBold" },
-    PreProc = { link = "AthensAqua" },
-    Include = { link = "AthensAqua" },
-    Define = { link = "AthensAqua" },
-    Macro = { link = "AthensAqua" },
-    PreCondit = { link = "AthensAqua" },
-    Constant = { link = "AthensPurple" },
-    Character = { link = "AthensPurple" },
-    String = { fg = colors.green, italic = config.italic.strings },
-    Boolean = { link = "AthensPurple" },
-    Number = { link = "AthensPurple" },
-    Float = { link = "AthensPurple" },
-    Type = { link = "AthensYellow" },
-    StorageClass = { link = "AthensOrange" },
-    Structure = { link = "AthensAqua" },
-    Typedef = { link = "AthensYellow" },
-    Pmenu = { fg = colors.fg1, bg = colors.bg2 },
-    PmenuSel = { fg = colors.bg2, bg = colors.blue, bold = config.bold },
-    PmenuSbar = { bg = colors.bg2 },
-    PmenuThumb = { bg = colors.bg4 },
-    DiffDelete = { bg = colors.dark_red },
-    DiffAdd = { bg = colors.dark_green },
-    DiffChange = { bg = colors.dark_aqua },
-    DiffText = { bg = colors.yellow, fg = colors.bg0 },
-    SpellCap = { link = "AthensBlueUnderline" },
-    SpellBad = { link = "AthensRedUnderline" },
-    SpellLocal = { link = "AthensAquaUnderline" },
-    SpellRare = { link = "AthensPurpleUnderline" },
-    Whitespace = { fg = colors.bg2 },
-    Delimiter = { link = "AthensOrange" },
-    EndOfBuffer = { link = "NonText" },
-    DiagnosticError = { link = "AthensRed" },
-    DiagnosticSignError = { link = "AthensRedSign" },
-    DiagnosticUnderlineError = { link = "AthensRedUnderline" },
-    DiagnosticWarn = { link = "AthensYellow" },
-    DiagnosticSignWarn = { link = "AthensYellowSign" },
-    DiagnosticUnderlineWarn = { link = "AthensYellowUnderline" },
-    DiagnosticInfo = { link = "AthensBlue" },
-    DiagnosticSignInfo = { link = "AthensBlueSign" },
-    DiagnosticUnderlineInfo = { link = "AthensBlueUnderline" },
-    DiagnosticHint = { link = "AthensAqua" },
-    DiagnosticSignHint = { link = "AthensAquaSign" },
-    DiagnosticUnderlineHint = { link = "AthensAquaUnderline" },
-    DiagnosticFloatingError = { link = "AthensRed" },
-    DiagnosticFloatingWarn = { link = "AthensOrange" },
-    DiagnosticFloatingInfo = { link = "AthensBlue" },
-    DiagnosticFloatingHint = { link = "AthensAqua" },
-    DiagnosticVirtualTextError = { link = "AthensRed" },
-    DiagnosticVirtualTextWarn = { link = "AthensYellow" },
-    DiagnosticVirtualTextInfo = { link = "AthensBlue" },
-    DiagnosticVirtualTextHint = { link = "AthensAqua" },
-    DiagnosticOk = { link = "AthensGreenSign" },
-    LspReferenceRead = { link = "AthensYellowBold" },
-    LspReferenceText = { link = "AthensYellowBold" },
-    LspReferenceWrite = { link = "AthensOrangeBold" },
-    LspCodeLens = { link = "AthensGray" },
-    LspSignatureActiveParameter = { link = "Search" },
-    gitcommitSelectedFile = { link = "AthensGreen" },
-    gitcommitDiscardedFile = { link = "AthensRed" },
-    GitSignsAdd = { link = "AthensGreen" },
-    GitSignsChange = { link = "AthensOrange" },
-    GitSignsDelete = { link = "AthensRed" },
-    NvimTreeSymlink = { fg = colors.neutral_aqua },
-    NvimTreeRootFolder = { fg = colors.neutral_purple, bold = true },
-    NvimTreeFolderIcon = { fg = colors.neutral_blue, bold = true },
-    NvimTreeFileIcon = { fg = colors.light2 },
-    NvimTreeExecFile = { fg = colors.neutral_green, bold = true },
-    NvimTreeOpenedFile = { fg = colors.bright_red, bold = true },
-    NvimTreeSpecialFile = { fg = colors.neutral_yellow, bold = true, underline = true },
-    NvimTreeImageFile = { fg = colors.neutral_purple },
-    NvimTreeIndentMarker = { fg = colors.dark3 },
-    NvimTreeGitDirty = { fg = colors.neutral_yellow },
-    NvimTreeGitStaged = { fg = colors.neutral_yellow },
-    NvimTreeGitMerge = { fg = colors.neutral_purple },
-    NvimTreeGitRenamed = { fg = colors.neutral_purple },
-    NvimTreeGitNew = { fg = colors.neutral_yellow },
-    NvimTreeGitDeleted = { fg = colors.neutral_red },
-    NvimTreeWindowPicker = { bg = colors.aqua },
-    debugPC = { link = "DiffAdd" },
-    debugBreakpoint = { link = "AthensRedSign" },
-    StartifyBracket = { link = "AthensFg3" },
-    StartifyFile = { link = "AthensFg1" },
-    StartifyNumber = { link = "AthensBlue" },
-    StartifyPath = { link = "AthensGray" },
-    StartifySlash = { link = "AthensGray" },
-    StartifySection = { link = "AthensYellow" },
-    StartifySpecial = { link = "AthensBg2" },
-    StartifyHeader = { link = "AthensOrange" },
-    StartifyFooter = { link = "AthensBg2" },
-    StartifyVar = { link = "StartifyPath" },
-    StartifySelect = { link = "Title" },
-    DirvishPathTail = { link = "AthensAqua" },
-    DirvishArg = { link = "AthensYellow" },
-    netrwDir = { link = "AthensAqua" },
-    netrwClassify = { link = "AthensAqua" },
-    netrwLink = { link = "AthensGray" },
-    netrwSymLink = { link = "AthensFg1" },
-    netrwExe = { link = "AthensYellow" },
-    netrwComment = { link = "AthensGray" },
-    netrwList = { link = "AthensBlue" },
-    netrwHelpCmd = { link = "AthensAqua" },
-    netrwCmdSep = { link = "AthensFg3" },
-    netrwVersion = { link = "AthensGreen" },
-    NERDTreeDir = { link = "AthensAqua" },
-    NERDTreeDirSlash = { link = "AthensAqua" },
-    NERDTreeOpenable = { link = "AthensOrange" },
-    NERDTreeClosable = { link = "AthensOrange" },
-    NERDTreeFile = { link = "AthensFg1" },
-    NERDTreeExecFile = { link = "AthensYellow" },
-    NERDTreeUp = { link = "AthensGray" },
-    NERDTreeCWD = { link = "AthensGreen" },
-    NERDTreeHelp = { link = "AthensFg1" },
-    NERDTreeToggleOn = { link = "AthensGreen" },
-    NERDTreeToggleOff = { link = "AthensRed" },
-    CocErrorSign = { link = "AthensRedSign" },
-    CocWarningSign = { link = "AthensOrangeSign" },
-    CocInfoSign = { link = "AthensBlueSign" },
-    CocHintSign = { link = "AthensAquaSign" },
-    CocErrorFloat = { link = "AthensRed" },
-    CocWarningFloat = { link = "AthensOrange" },
-    CocInfoFloat = { link = "AthensBlue" },
-    CocHintFloat = { link = "AthensAqua" },
-    CocDiagnosticsError = { link = "AthensRed" },
-    CocDiagnosticsWarning = { link = "AthensOrange" },
-    CocDiagnosticsInfo = { link = "AthensBlue" },
-    CocDiagnosticsHint = { link = "AthensAqua" },
-    CocSelectedText = { link = "AthensRed" },
-    CocMenuSel = { link = "PmenuSel" },
-    CocCodeLens = { link = "AthensGray" },
-    CocErrorHighlight = { link = "AthensRedUnderline" },
-    CocWarningHighlight = { link = "AthensOrangeUnderline" },
-    CocInfoHighlight = { link = "AthensBlueUnderline" },
-    CocHintHighlight = { link = "AthensAquaUnderline" },
-    TelescopeNormal = { link = "AthensFg1" },
-    TelescopeSelection = { link = "AthensOrangeBold" },
-    TelescopeSelectionCaret = { link = "AthensRed" },
-    TelescopeMultiSelection = { link = "AthensGray" },
-    TelescopeBorder = { link = "TelescopeNormal" },
-    TelescopePromptBorder = { link = "TelescopeNormal" },
-    TelescopeResultsBorder = { link = "TelescopeNormal" },
-    TelescopePreviewBorder = { link = "TelescopeNormal" },
-    TelescopeMatching = { link = "AthensBlue" },
-    TelescopePromptPrefix = { link = "AthensRed" },
-    TelescopePrompt = { link = "TelescopeNormal" },
-    CmpItemAbbr = { link = "AthensFg0" },
-    CmpItemAbbrDeprecated = { link = "AthensFg1" },
-    CmpItemAbbrMatch = { link = "AthensBlueBold" },
-    CmpItemAbbrMatchFuzzy = { link = "AthensBlueUnderline" },
-    CmpItemMenu = { link = "AthensGray" },
-    CmpItemKindText = { link = "AthensOrange" },
-    CmpItemKindVariable = { link = "AthensOrange" },
-    CmpItemKindMethod = { link = "AthensBlue" },
-    CmpItemKindFunction = { link = "AthensBlue" },
-    CmpItemKindConstructor = { link = "AthensYellow" },
-    CmpItemKindUnit = { link = "AthensBlue" },
-    CmpItemKindField = { link = "AthensBlue" },
-    CmpItemKindClass = { link = "AthensYellow" },
-    CmpItemKindInterface = { link = "AthensYellow" },
-    CmpItemKindModule = { link = "AthensBlue" },
-    CmpItemKindProperty = { link = "AthensBlue" },
-    CmpItemKindValue = { link = "AthensOrange" },
-    CmpItemKindEnum = { link = "AthensYellow" },
-    CmpItemKindOperator = { link = "AthensYellow" },
-    CmpItemKindKeyword = { link = "AthensPurple" },
-    CmpItemKindEvent = { link = "AthensPurple" },
-    CmpItemKindReference = { link = "AthensPurple" },
-    CmpItemKindColor = { link = "AthensPurple" },
-    CmpItemKindSnippet = { link = "AthensGreen" },
-    CmpItemKindFile = { link = "AthensBlue" },
-    CmpItemKindFolder = { link = "AthensBlue" },
-    CmpItemKindEnumMember = { link = "AthensAqua" },
-    CmpItemKindConstant = { link = "AthensOrange" },
-    CmpItemKindStruct = { link = "AthensYellow" },
-    CmpItemKindTypeParameter = { link = "AthensYellow" },
-    diffAdded = { link = "DiffAdd" },
-    diffRemoved = { link = "DiffDelete" },
-    diffChanged = { link = "DiffChange" },
-    diffFile = { link = "AthensOrange" },
-    diffNewFile = { link = "AthensYellow" },
-    diffOldFile = { link = "AthensOrange" },
-    diffLine = { link = "AthensBlue" },
-    diffIndexLine = { link = "diffChanged" },
-    NavicIconsFile = { link = "AthensBlue" },
-    NavicIconsModule = { link = "AthensOrange" },
-    NavicIconsNamespace = { link = "AthensBlue" },
-    NavicIconsPackage = { link = "AthensAqua" },
-    NavicIconsClass = { link = "AthensYellow" },
-    NavicIconsMethod = { link = "AthensBlue" },
-    NavicIconsProperty = { link = "AthensAqua" },
-    NavicIconsField = { link = "AthensPurple" },
-    NavicIconsConstructor = { link = "AthensBlue" },
-    NavicIconsEnum = { link = "AthensPurple" },
-    NavicIconsInterface = { link = "AthensGreen" },
-    NavicIconsFunction = { link = "AthensBlue" },
-    NavicIconsVariable = { link = "AthensPurple" },
-    NavicIconsConstant = { link = "AthensOrange" },
-    NavicIconsString = { link = "AthensGreen" },
-    NavicIconsNumber = { link = "AthensOrange" },
-    NavicIconsBoolean = { link = "AthensOrange" },
-    NavicIconsArray = { link = "AthensOrange" },
-    NavicIconsObject = { link = "AthensOrange" },
-    NavicIconsKey = { link = "AthensAqua" },
-    NavicIconsNull = { link = "AthensOrange" },
-    NavicIconsEnumMember = { link = "AthensYellow" },
-    NavicIconsStruct = { link = "AthensPurple" },
-    NavicIconsEvent = { link = "AthensYellow" },
-    NavicIconsOperator = { link = "AthensRed" },
-    NavicIconsTypeParameter = { link = "AthensRed" },
-    NavicText = { link = "AthensWhite" },
-    NavicSeparator = { link = "AthensWhite" },
-    htmlTag = { link = "AthensAquaBold" },
-    htmlEndTag = { link = "AthensAquaBold" },
-    htmlTagName = { link = "AthensBlue" },
-    htmlArg = { link = "AthensOrange" },
-    htmlTagN = { link = "AthensFg1" },
-    htmlSpecialTagName = { link = "AthensBlue" },
+    AthensFg0 = { fg = colors.fg0 }, --[[fix]]
+    AthensFg1 = { fg = colors.fg1 }, --[[fix]]
+    AthensFg2 = { fg = colors.fg2 }, --[[fix]]
+    AthensFg3 = { fg = colors.fg3 }, --[[fix]]
+    AthensFg4 = { fg = colors.fg4 }, --[[fix]]
+    AthensGray = { fg = colors.gray }, --[[fix]]
+    AthensBg0 = { fg = colors.bg0 }, --[[fix]]
+    AthensBg1 = { fg = colors.bg1 }, --[[fix]]
+    AthensBg2 = { fg = colors.bg2 }, --[[fix]]
+    AthensBg3 = { fg = colors.bg3 }, --[[fix]]
+    AthensBg4 = { fg = colors.bg4 }, --[[fix]]
+    AthensRed = { fg = colors.red }, --[[fix]]
+    AthensRedBold = { fg = colors.red, bold = config.bold }, --[[fix]]
+    AthensGreen = { fg = colors.green }, --[[fix]]
+    AthensGreenBold = { fg = colors.green, bold = config.bold }, --[[fix]]
+    AthensYellow = { fg = colors.yellow }, --[[fix]]
+    AthensYellowBold = { fg = colors.yellow, bold = config.bold }, --[[fix]]
+    AthensBlue = { fg = colors.blue }, --[[fix]]
+    AthensBlueBold = { fg = colors.blue, bold = config.bold }, --[[fix]]
+    AthensPurple = { fg = colors.purple }, --[[fix]]
+    AthensPurpleBold = { fg = colors.purple, bold = config.bold }, --[[fix]]
+    AthensAqua = { fg = colors.aqua }, --[[fix]]
+    AthensAquaBold = { fg = colors.aqua, bold = config.bold }, --[[fix]]
+    AthensOrange = { fg = colors.orange }, --[[fix]]
+    AthensOrangeBold = { fg = colors.orange, bold = config.bold }, --[[fix]]
+    AthensRedSign = config.transparent_mode and { fg = colors.red, reverse = config.invert_signs } --[[fix]]
+      or { fg = colors.red, bg = colors.bg1, reverse = config.invert_signs }, --[[fix]]
+    AthensGreenSign = config.transparent_mode and { fg = colors.green, reverse = config.invert_signs } --[[fix]]
+      or { fg = colors.green, bg = colors.bg1, reverse = config.invert_signs }, --[[fix]]
+    AthensYellowSign = config.transparent_mode and { fg = colors.yellow, reverse = config.invert_signs } --[[fix]]
+      or { fg = colors.yellow, bg = colors.bg1, reverse = config.invert_signs }, --[[fix]]
+    AthensBlueSign = config.transparent_mode and { fg = colors.blue, reverse = config.invert_signs } --[[fix]]
+      or { fg = colors.blue, bg = colors.bg1, reverse = config.invert_signs }, --[[fix]]
+    AthensPurpleSign = config.transparent_mode and { fg = colors.purple, reverse = config.invert_signs } --[[fix]]
+      or { fg = colors.purple, bg = colors.bg1, reverse = config.invert_signs }, --[[fix]]
+    AthensAquaSign = config.transparent_mode and { fg = colors.aqua, reverse = config.invert_signs } --[[fix]]
+      or { fg = colors.aqua, bg = colors.bg1, reverse = config.invert_signs }, --[[fix]]
+    AthensOrangeSign = config.transparent_mode and { fg = colors.orange, reverse = config.invert_signs } --[[fix]]
+      or { fg = colors.orange, bg = colors.bg1, reverse = config.invert_signs }, --[[fix]]
+    AthensRedUnderline = { undercurl = config.undercurl, sp = colors.red }, --[[fix]]
+    AthensGreenUnderline = { undercurl = config.undercurl, sp = colors.green }, --[[fix]]
+    AthensYellowUnderline = { undercurl = config.undercurl, sp = colors.yellow }, --[[fix]]
+    AthensBlueUnderline = { undercurl = config.undercurl, sp = colors.blue }, --[[fix]]
+    AthensPurpleUnderline = { undercurl = config.undercurl, sp = colors.purple }, --[[fix]]
+    AthensAquaUnderline = { undercurl = config.undercurl, sp = colors.aqua }, --[[fix]]
+    AthensOrangeUnderline = { undercurl = config.undercurl, sp = colors.orange }, --[[fix]]
+    Normal = config.transparent_mode and { fg = colors.fg1, bg = nil } or { fg = colors.fg1, bg = colors.bg0 }, --[[fix]]
+    NormalFloat = config.transparent_mode and { fg = colors.fg1, bg = nil } or { fg = colors.fg1, bg = colors.bg1 }, --[[fix]]
+    NormalNC = config.dim_inactive and { fg = colors.fg0, bg = colors.bg1 } or { link = "Normal" }, --[[fix]]
+    CursorLine = { bg = colors.bg1 }, --[[fix]]
+    CursorColumn = { link = "CursorLine" }, --[[fix]]
+    TabLineFill = { fg = colors.bg4, bg = colors.bg1, reverse = config.invert_tabline }, --[[fix]]
+    TabLineSel = { fg = colors.green, bg = colors.bg1, reverse = config.invert_tabline }, --[[fix]]
+    TabLine = { link = "TabLineFill" }, --[[fix]]
+    MatchParen = { bg = colors.bg3, bold = config.bold }, --[[fix]]
+    ColorColumn = { bg = colors.bg1 }, --[[fix]]
+    Conceal = { fg = colors.blue }, --[[fix]]
+    CursorLineNr = { fg = colors.yellow, bg = colors.bg1 }, --[[fix]]
+    NonText = { link = "AthensBg2" }, --[[fix]]
+    SpecialKey = { link = "AthensFg4" }, --[[fix]]
+    Visual = { bg = colors.bg3, reverse = config.invert_selection }, --[[fix]]
+    VisualNOS = { link = "Visual" }, --[[fix]]
+    Search = { fg = colors.yellow, bg = colors.bg0, reverse = config.inverse }, --[[fix]]
+    IncSearch = { fg = colors.orange, bg = colors.bg0, reverse = config.inverse }, --[[fix]]
+    CurSearch = { link = "IncSearch" }, --[[fix]]
+    QuickFixLine = { link = "AthensPurple" }, --[[fix]]
+    Underlined = { fg = colors.blue, underline = config.underline }, --[[fix]]
+    StatusLine = { fg = colors.bg2, bg = colors.fg1, reverse = config.inverse }, --[[fix]]
+    StatusLineNC = { fg = colors.bg1, bg = colors.fg4, reverse = config.inverse }, --[[fix]]
+    WinBar = { fg = colors.fg4, bg = colors.bg0 }, --[[fix]]
+    WinBarNC = { fg = colors.fg3, bg = colors.bg1 }, --[[fix]]
+    WinSeparator = config.transparent_mode and { fg = colors.bg3, bg = nil } or { fg = colors.bg3, bg = colors.bg0 }, --[[fix]]
+    WildMenu = { fg = colors.blue, bg = colors.bg2, bold = config.bold }, --[[fix]]
+    Directory = { link = "AthensGreenBold" }, --[[fix]]
+    Title = { link = "AthensGreenBold" }, --[[fix]]
+    ErrorMsg = { fg = colors.bg0, bg = colors.red, bold = config.bold }, --[[fix]]
+    MoreMsg = { link = "AthensYellowBold" }, --[[fix]]
+    ModeMsg = { link = "AthensYellowBold" }, --[[fix]]
+    Question = { link = "AthensOrangeBold" }, --[[fix]]
+    WarningMsg = { link = "AthensRedBold" }, --[[fix]]
+    LineNr = { fg = colors.bg4 }, --[[fix]]
+    SignColumn = config.transparent_mode and { bg = nil } or { bg = colors.bg1 }, --[[fix]]
+    Folded = { fg = colors.gray, bg = colors.bg1, italic = config.italic.folds }, --[[fix]]
+    FoldColumn = config.transparent_mode and { fg = colors.gray, bg = nil } or { fg = colors.gray, bg = colors.bg1 }, --[[fix]]
+    Cursor = { reverse = config.inverse }, --[[fix]]
+    vCursor = { link = "Cursor" }, --[[fix]]
+    iCursor = { link = "Cursor" }, --[[fix]]
+    lCursor = { link = "Cursor" }, --[[fix]]
+    Special = { link = "AthensOrange" }, --[[fix]]
+    Comment = { fg = colors.gray, italic = config.italic.comments }, --[[fix]]
+    Todo = { fg = colors.bg0, bg = colors.yellow, bold = config.bold, italic = config.italic.comments }, --[[fix]]
+    Done = { fg = colors.orange, bold = config.bold, italic = config.italic.comments }, --[[fix]]
+    Error = { fg = colors.red, bold = config.bold, reverse = config.inverse }, --[[fix]]
+    Statement = { link = "AthensRed" }, --[[fix]]
+    Conditional = { link = "AthensRed" }, --[[fix]]
+    Repeat = { link = "AthensRed" }, --[[fix]]
+    Label = { link = "AthensRed" }, --[[fix]]
+    Exception = { link = "AthensRed" }, --[[fix]]
+    Operator = { fg = colors.orange, italic = config.italic.operators }, --[[fix]]
+    Keyword = { link = "AthensRed" }, --[[fix]]
+    Identifier = { link = "AthensBlue" }, --[[fix]]
+    Function = { link = "AthensGreenBold" }, --[[fix]]
+    PreProc = { link = "AthensAqua" }, --[[fix]]
+    Include = { link = "AthensAqua" }, --[[fix]]
+    Define = { link = "AthensAqua" }, --[[fix]]
+    Macro = { link = "AthensAqua" }, --[[fix]]
+    PreCondit = { link = "AthensAqua" }, --[[fix]]
+    Constant = { link = "AthensPurple" }, --[[fix]]
+    Character = { link = "AthensPurple" }, --[[fix]]
+    String = { fg = colors.green, italic = config.italic.strings }, --[[fix]]
+    Boolean = { link = "AthensPurple" }, --[[fix]]
+    Number = { link = "AthensPurple" }, --[[fix]]
+    Float = { link = "AthensPurple" }, --[[fix]]
+    Type = { link = "AthensYellow" }, --[[fix]]
+    StorageClass = { link = "AthensOrange" }, --[[fix]]
+    Structure = { link = "AthensAqua" }, --[[fix]]
+    Typedef = { link = "AthensYellow" }, --[[fix]]
+    Pmenu = { fg = colors.fg1, bg = colors.bg2 }, --[[fix]]
+    PmenuSel = { fg = colors.bg2, bg = colors.blue, bold = config.bold }, --[[fix]]
+    PmenuSbar = { bg = colors.bg2 }, --[[fix]]
+    PmenuThumb = { bg = colors.bg4 }, --[[fix]]
+    DiffDelete = { bg = colors.dark_red }, --[[fix]]
+    DiffAdd = { bg = colors.dark_green }, --[[fix]]
+    DiffChange = { bg = colors.dark_aqua }, --[[fix]]
+    DiffText = { bg = colors.yellow, fg = colors.bg0 }, --[[fix]]
+    SpellCap = { link = "AthensBlueUnderline" }, --[[fix]]
+    SpellBad = { link = "AthensRedUnderline" }, --[[fix]]
+    SpellLocal = { link = "AthensAquaUnderline" }, --[[fix]]
+    SpellRare = { link = "AthensPurpleUnderline" }, --[[fix]]
+    Whitespace = { fg = colors.bg2 }, --[[fix]]
+    Delimiter = { link = "AthensOrange" }, --[[fix]]
+    EndOfBuffer = { link = "NonText" }, --[[fix]]
+    DiagnosticError = { link = "AthensRed" }, --[[fix]]
+    DiagnosticSignError = { link = "AthensRedSign" }, --[[fix]]
+    DiagnosticUnderlineError = { link = "AthensRedUnderline" }, --[[fix]]
+    DiagnosticWarn = { link = "AthensYellow" }, --[[fix]]
+    DiagnosticSignWarn = { link = "AthensYellowSign" }, --[[fix]]
+    DiagnosticUnderlineWarn = { link = "AthensYellowUnderline" }, --[[fix]]
+    DiagnosticInfo = { link = "AthensBlue" }, --[[fix]]
+    DiagnosticSignInfo = { link = "AthensBlueSign" }, --[[fix]]
+    DiagnosticUnderlineInfo = { link = "AthensBlueUnderline" }, --[[fix]]
+    DiagnosticHint = { link = "AthensAqua" }, --[[fix]]
+    DiagnosticSignHint = { link = "AthensAquaSign" }, --[[fix]]
+    DiagnosticUnderlineHint = { link = "AthensAquaUnderline" }, --[[fix]]
+    DiagnosticFloatingError = { link = "AthensRed" }, --[[fix]]
+    DiagnosticFloatingWarn = { link = "AthensOrange" }, --[[fix]]
+    DiagnosticFloatingInfo = { link = "AthensBlue" }, --[[fix]]
+    DiagnosticFloatingHint = { link = "AthensAqua" }, --[[fix]]
+    DiagnosticVirtualTextError = { link = "AthensRed" }, --[[fix]]
+    DiagnosticVirtualTextWarn = { link = "AthensYellow" }, --[[fix]]
+    DiagnosticVirtualTextInfo = { link = "AthensBlue" }, --[[fix]]
+    DiagnosticVirtualTextHint = { link = "AthensAqua" }, --[[fix]]
+    DiagnosticOk = { link = "AthensGreenSign" }, --[[fix]]
+    LspReferenceRead = { link = "AthensYellowBold" }, --[[fix]]
+    LspReferenceText = { link = "AthensYellowBold" }, --[[fix]]
+    LspReferenceWrite = { link = "AthensOrangeBold" }, --[[fix]]
+    LspCodeLens = { link = "AthensGray" }, --[[fix]]
+    LspSignatureActiveParameter = { link = "Search" }, --[[fix]]
+    gitcommitSelectedFile = { link = "AthensGreen" }, --[[fix]]
+    gitcommitDiscardedFile = { link = "AthensRed" }, --[[fix]]
+    GitSignsAdd = { link = "AthensGreen" }, --[[fix]]
+    GitSignsChange = { link = "AthensOrange" }, --[[fix]]
+    GitSignsDelete = { link = "AthensRed" }, --[[fix]]
+    NvimTreeSymlink = { fg = colors.neutral_aqua }, --[[fix]]
+    NvimTreeRootFolder = { fg = colors.neutral_purple, bold = true }, --[[fix]]
+    NvimTreeFolderIcon = { fg = colors.neutral_blue, bold = true }, --[[fix]]
+    NvimTreeFileIcon = { fg = colors.light2 }, --[[fix]]
+    NvimTreeExecFile = { fg = colors.neutral_green, bold = true }, --[[fix]]
+    NvimTreeOpenedFile = { fg = colors.bright_red, bold = true }, --[[fix]]
+    NvimTreeSpecialFile = { fg = colors.neutral_yellow, bold = true, underline = true }, --[[fix]]
+    NvimTreeImageFile = { fg = colors.neutral_purple }, --[[fix]]
+    NvimTreeIndentMarker = { fg = colors.dark3 }, --[[fix]]
+    NvimTreeGitDirty = { fg = colors.neutral_yellow }, --[[fix]]
+    NvimTreeGitStaged = { fg = colors.neutral_yellow }, --[[fix]]
+    NvimTreeGitMerge = { fg = colors.neutral_purple }, --[[fix]]
+    NvimTreeGitRenamed = { fg = colors.neutral_purple }, --[[fix]]
+    NvimTreeGitNew = { fg = colors.neutral_yellow }, --[[fix]]
+    NvimTreeGitDeleted = { fg = colors.neutral_red }, --[[fix]]
+    NvimTreeWindowPicker = { bg = colors.aqua }, --[[fix]]
+    debugPC = { link = "DiffAdd" }, --[[fix]]
+    debugBreakpoint = { link = "AthensRedSign" }, --[[fix]]
+    StartifyBracket = { link = "AthensFg3" }, --[[fix]]
+    StartifyFile = { link = "AthensFg1" }, --[[fix]]
+    StartifyNumber = { link = "AthensBlue" }, --[[fix]]
+    StartifyPath = { link = "AthensGray" }, --[[fix]]
+    StartifySlash = { link = "AthensGray" }, --[[fix]]
+    StartifySection = { link = "AthensYellow" }, --[[fix]]
+    StartifySpecial = { link = "AthensBg2" }, --[[fix]]
+    StartifyHeader = { link = "AthensOrange" }, --[[fix]]
+    StartifyFooter = { link = "AthensBg2" }, --[[fix]]
+    StartifyVar = { link = "StartifyPath" }, --[[fix]]
+    StartifySelect = { link = "Title" }, --[[fix]]
+    DirvishPathTail = { link = "AthensAqua" }, --[[fix]]
+    DirvishArg = { link = "AthensYellow" }, --[[fix]]
+    netrwDir = { link = "AthensAqua" }, --[[fix]]
+    netrwClassify = { link = "AthensAqua" }, --[[fix]]
+    netrwLink = { link = "AthensGray" }, --[[fix]]
+    netrwSymLink = { link = "AthensFg1" }, --[[fix]]
+    netrwExe = { link = "AthensYellow" }, --[[fix]]
+    netrwComment = { link = "AthensGray" }, --[[fix]]
+    netrwList = { link = "AthensBlue" }, --[[fix]]
+    netrwHelpCmd = { link = "AthensAqua" }, --[[fix]]
+    netrwCmdSep = { link = "AthensFg3" }, --[[fix]]
+    netrwVersion = { link = "AthensGreen" }, --[[fix]]
+    NERDTreeDir = { link = "AthensAqua" }, --[[fix]]
+    NERDTreeDirSlash = { link = "AthensAqua" }, --[[fix]]
+    NERDTreeOpenable = { link = "AthensOrange" }, --[[fix]]
+    NERDTreeClosable = { link = "AthensOrange" }, --[[fix]]
+    NERDTreeFile = { link = "AthensFg1" }, --[[fix]]
+    NERDTreeExecFile = { link = "AthensYellow" }, --[[fix]]
+    NERDTreeUp = { link = "AthensGray" }, --[[fix]]
+    NERDTreeCWD = { link = "AthensGreen" }, --[[fix]]
+    NERDTreeHelp = { link = "AthensFg1" }, --[[fix]]
+    NERDTreeToggleOn = { link = "AthensGreen" }, --[[fix]]
+    NERDTreeToggleOff = { link = "AthensRed" }, --[[fix]]
+    CocErrorSign = { link = "AthensRedSign" }, --[[fix]]
+    CocWarningSign = { link = "AthensOrangeSign" }, --[[fix]]
+    CocInfoSign = { link = "AthensBlueSign" }, --[[fix]]
+    CocHintSign = { link = "AthensAquaSign" }, --[[fix]]
+    CocErrorFloat = { link = "AthensRed" }, --[[fix]]
+    CocWarningFloat = { link = "AthensOrange" }, --[[fix]]
+    CocInfoFloat = { link = "AthensBlue" }, --[[fix]]
+    CocHintFloat = { link = "AthensAqua" }, --[[fix]]
+    CocDiagnosticsError = { link = "AthensRed" }, --[[fix]]
+    CocDiagnosticsWarning = { link = "AthensOrange" }, --[[fix]]
+    CocDiagnosticsInfo = { link = "AthensBlue" }, --[[fix]]
+    CocDiagnosticsHint = { link = "AthensAqua" }, --[[fix]]
+    CocSelectedText = { link = "AthensRed" }, --[[fix]]
+    CocMenuSel = { link = "PmenuSel" }, --[[fix]]
+    CocCodeLens = { link = "AthensGray" }, --[[fix]]
+    CocErrorHighlight = { link = "AthensRedUnderline" }, --[[fix]]
+    CocWarningHighlight = { link = "AthensOrangeUnderline" }, --[[fix]]
+    CocInfoHighlight = { link = "AthensBlueUnderline" }, --[[fix]]
+    CocHintHighlight = { link = "AthensAquaUnderline" }, --[[fix]]
+    TelescopeNormal = { link = "AthensFg1" }, --[[fix]]
+    TelescopeSelection = { link = "AthensOrangeBold" }, --[[fix]]
+    TelescopeSelectionCaret = { link = "AthensRed" }, --[[fix]]
+    TelescopeMultiSelection = { link = "AthensGray" }, --[[fix]]
+    TelescopeBorder = { link = "TelescopeNormal" }, --[[fix]]
+    TelescopePromptBorder = { link = "TelescopeNormal" }, --[[fix]]
+    TelescopeResultsBorder = { link = "TelescopeNormal" }, --[[fix]]
+    TelescopePreviewBorder = { link = "TelescopeNormal" }, --[[fix]]
+    TelescopeMatching = { link = "AthensBlue" }, --[[fix]]
+    TelescopePromptPrefix = { link = "AthensRed" }, --[[fix]]
+    TelescopePrompt = { link = "TelescopeNormal" }, --[[fix]]
+    CmpItemAbbr = { link = "AthensFg0" }, --[[fix]]
+    CmpItemAbbrDeprecated = { link = "AthensFg1" }, --[[fix]]
+    CmpItemAbbrMatch = { link = "AthensBlueBold" }, --[[fix]]
+    CmpItemAbbrMatchFuzzy = { link = "AthensBlueUnderline" }, --[[fix]]
+    CmpItemMenu = { link = "AthensGray" }, --[[fix]]
+    CmpItemKindText = { link = "AthensOrange" }, --[[fix]]
+    CmpItemKindVariable = { link = "AthensOrange" }, --[[fix]]
+    CmpItemKindMethod = { link = "AthensBlue" }, --[[fix]]
+    CmpItemKindFunction = { link = "AthensBlue" }, --[[fix]]
+    CmpItemKindConstructor = { link = "AthensYellow" }, --[[fix]]
+    CmpItemKindUnit = { link = "AthensBlue" }, --[[fix]]
+    CmpItemKindField = { link = "AthensBlue" }, --[[fix]]
+    CmpItemKindClass = { link = "AthensYellow" }, --[[fix]]
+    CmpItemKindInterface = { link = "AthensYellow" }, --[[fix]]
+    CmpItemKindModule = { link = "AthensBlue" }, --[[fix]]
+    CmpItemKindProperty = { link = "AthensBlue" }, --[[fix]]
+    CmpItemKindValue = { link = "AthensOrange" }, --[[fix]]
+    CmpItemKindEnum = { link = "AthensYellow" }, --[[fix]]
+    CmpItemKindOperator = { link = "AthensYellow" }, --[[fix]]
+    CmpItemKindKeyword = { link = "AthensPurple" }, --[[fix]]
+    CmpItemKindEvent = { link = "AthensPurple" }, --[[fix]]
+    CmpItemKindReference = { link = "AthensPurple" }, --[[fix]]
+    CmpItemKindColor = { link = "AthensPurple" }, --[[fix]]
+    CmpItemKindSnippet = { link = "AthensGreen" }, --[[fix]]
+    CmpItemKindFile = { link = "AthensBlue" }, --[[fix]]
+    CmpItemKindFolder = { link = "AthensBlue" }, --[[fix]]
+    CmpItemKindEnumMember = { link = "AthensAqua" }, --[[fix]]
+    CmpItemKindConstant = { link = "AthensOrange" }, --[[fix]]
+    CmpItemKindStruct = { link = "AthensYellow" }, --[[fix]]
+    CmpItemKindTypeParameter = { link = "AthensYellow" }, --[[fix]]
+    diffAdded = { link = "DiffAdd" }, --[[fix]]
+    diffRemoved = { link = "DiffDelete" }, --[[fix]]
+    diffChanged = { link = "DiffChange" }, --[[fix]]
+    diffFile = { link = "AthensOrange" }, --[[fix]]
+    diffNewFile = { link = "AthensYellow" }, --[[fix]]
+    diffOldFile = { link = "AthensOrange" }, --[[fix]]
+    diffLine = { link = "AthensBlue" }, --[[fix]]
+    diffIndexLine = { link = "diffChanged" }, --[[fix]]
+    NavicIconsFile = { link = "AthensBlue" }, --[[fix]]
+    NavicIconsModule = { link = "AthensOrange" }, --[[fix]]
+    NavicIconsNamespace = { link = "AthensBlue" }, --[[fix]]
+    NavicIconsPackage = { link = "AthensAqua" }, --[[fix]]
+    NavicIconsClass = { link = "AthensYellow" }, --[[fix]]
+    NavicIconsMethod = { link = "AthensBlue" }, --[[fix]]
+    NavicIconsProperty = { link = "AthensAqua" }, --[[fix]]
+    NavicIconsField = { link = "AthensPurple" }, --[[fix]]
+    NavicIconsConstructor = { link = "AthensBlue" }, --[[fix]]
+    NavicIconsEnum = { link = "AthensPurple" }, --[[fix]]
+    NavicIconsInterface = { link = "AthensGreen" }, --[[fix]]
+    NavicIconsFunction = { link = "AthensBlue" }, --[[fix]]
+    NavicIconsVariable = { link = "AthensPurple" }, --[[fix]]
+    NavicIconsConstant = { link = "AthensOrange" }, --[[fix]]
+    NavicIconsString = { link = "AthensGreen" }, --[[fix]]
+    NavicIconsNumber = { link = "AthensOrange" }, --[[fix]]
+    NavicIconsBoolean = { link = "AthensOrange" }, --[[fix]]
+    NavicIconsArray = { link = "AthensOrange" }, --[[fix]]
+    NavicIconsObject = { link = "AthensOrange" }, --[[fix]]
+    NavicIconsKey = { link = "AthensAqua" }, --[[fix]]
+    NavicIconsNull = { link = "AthensOrange" }, --[[fix]]
+    NavicIconsEnumMember = { link = "AthensYellow" }, --[[fix]]
+    NavicIconsStruct = { link = "AthensPurple" }, --[[fix]]
+    NavicIconsEvent = { link = "AthensYellow" }, --[[fix]]
+    NavicIconsOperator = { link = "AthensRed" }, --[[fix]]
+    NavicIconsTypeParameter = { link = "AthensRed" }, --[[fix]]
+    NavicText = { link = "AthensWhite" }, --[[fix]]
+    NavicSeparator = { link = "AthensWhite" }, --[[fix]]
+    htmlTag = { link = "AthensAquaBold" }, --[[fix]]
+    htmlEndTag = { link = "AthensAquaBold" }, --[[fix]]
+    htmlTagName = { link = "AthensBlue" }, --[[fix]]
+    htmlArg = { link = "AthensOrange" }, --[[fix]]
+    htmlTagN = { link = "AthensFg1" }, --[[fix]]
+    htmlSpecialTagName = { link = "AthensBlue" }, --[[fix]]
     htmlLink = { fg = colors.fg4, underline = config.underline },
-    htmlSpecialChar = { link = "AthensRed" },
+    htmlSpecialChar = { link = "AthensRed" }, --[[fix]]
     htmlBold = { fg = colors.fg0, bg = colors.bg0, bold = config.bold },
     htmlBoldUnderline = { fg = colors.fg0, bg = colors.bg0, bold = config.bold, underline = config.underline },
     htmlBoldItalic = { fg = colors.fg0, bg = colors.bg0, bold = config.bold, italic = true },
@@ -548,633 +589,633 @@ local function get_groups()
       underline = config.underline,
     },
     htmlItalic = { fg = colors.fg0, bg = colors.bg0, italic = true },
-    xmlTag = { link = "AthensAquaBold" },
-    xmlEndTag = { link = "AthensAquaBold" },
-    xmlTagName = { link = "AthensBlue" },
-    xmlEqual = { link = "AthensBlue" },
-    docbkKeyword = { link = "AthensAquaBold" },
-    xmlDocTypeDecl = { link = "AthensGray" },
-    xmlDocTypeKeyword = { link = "AthensPurple" },
-    xmlCdataStart = { link = "AthensGray" },
-    xmlCdataCdata = { link = "AthensPurple" },
-    dtdFunction = { link = "AthensGray" },
-    dtdTagName = { link = "AthensPurple" },
-    xmlAttrib = { link = "AthensOrange" },
-    xmlProcessingDelim = { link = "AthensGray" },
-    dtdParamEntityPunct = { link = "AthensGray" },
-    dtdParamEntityDPunct = { link = "AthensGray" },
-    xmlAttribPunct = { link = "AthensGray" },
-    xmlEntity = { link = "AthensRed" },
-    xmlEntityPunct = { link = "AthensRed" },
-    clojureKeyword = { link = "AthensBlue" },
-    clojureCond = { link = "AthensOrange" },
-    clojureSpecial = { link = "AthensOrange" },
-    clojureDefine = { link = "AthensOrange" },
-    clojureFunc = { link = "AthensYellow" },
-    clojureRepeat = { link = "AthensYellow" },
-    clojureCharacter = { link = "AthensAqua" },
-    clojureStringEscape = { link = "AthensAqua" },
-    clojureException = { link = "AthensRed" },
-    clojureRegexp = { link = "AthensAqua" },
-    clojureRegexpEscape = { link = "AthensAqua" },
-    clojureRegexpCharClass = { fg = colors.fg3, bold = config.bold },
-    clojureRegexpMod = { link = "clojureRegexpCharClass" },
-    clojureRegexpQuantifier = { link = "clojureRegexpCharClass" },
-    clojureParen = { link = "AthensFg3" },
-    clojureAnonArg = { link = "AthensYellow" },
-    clojureVariable = { link = "AthensBlue" },
-    clojureMacro = { link = "AthensOrange" },
-    clojureMeta = { link = "AthensYellow" },
-    clojureDeref = { link = "AthensYellow" },
-    clojureQuote = { link = "AthensYellow" },
-    clojureUnquote = { link = "AthensYellow" },
-    cOperator = { link = "AthensPurple" },
-    cppOperator = { link = "AthensPurple" },
-    cStructure = { link = "AthensOrange" },
-    pythonBuiltin = { link = "AthensOrange" },
-    pythonBuiltinObj = { link = "AthensOrange" },
-    pythonBuiltinFunc = { link = "AthensOrange" },
-    pythonFunction = { link = "AthensAqua" },
-    pythonDecorator = { link = "AthensRed" },
-    pythonInclude = { link = "AthensBlue" },
-    pythonImport = { link = "AthensBlue" },
-    pythonRun = { link = "AthensBlue" },
-    pythonCoding = { link = "AthensBlue" },
-    pythonOperator = { link = "AthensRed" },
-    pythonException = { link = "AthensRed" },
-    pythonExceptions = { link = "AthensPurple" },
-    pythonBoolean = { link = "AthensPurple" },
-    pythonDot = { link = "AthensFg3" },
-    pythonConditional = { link = "AthensRed" },
-    pythonRepeat = { link = "AthensRed" },
-    pythonDottedName = { link = "AthensGreenBold" },
-    cssBraces = { link = "AthensBlue" },
-    cssFunctionName = { link = "AthensYellow" },
-    cssIdentifier = { link = "AthensOrange" },
-    cssClassName = { link = "AthensGreen" },
-    cssColor = { link = "AthensBlue" },
-    cssSelectorOp = { link = "AthensBlue" },
-    cssSelectorOp2 = { link = "AthensBlue" },
-    cssImportant = { link = "AthensGreen" },
-    cssVendor = { link = "AthensFg1" },
-    cssTextProp = { link = "AthensAqua" },
-    cssAnimationProp = { link = "AthensAqua" },
-    cssUIProp = { link = "AthensYellow" },
-    cssTransformProp = { link = "AthensAqua" },
-    cssTransitionProp = { link = "AthensAqua" },
-    cssPrintProp = { link = "AthensAqua" },
-    cssPositioningProp = { link = "AthensYellow" },
-    cssBoxProp = { link = "AthensAqua" },
-    cssFontDescriptorProp = { link = "AthensAqua" },
-    cssFlexibleBoxProp = { link = "AthensAqua" },
-    cssBorderOutlineProp = { link = "AthensAqua" },
-    cssBackgroundProp = { link = "AthensAqua" },
-    cssMarginProp = { link = "AthensAqua" },
-    cssListProp = { link = "AthensAqua" },
-    cssTableProp = { link = "AthensAqua" },
-    cssFontProp = { link = "AthensAqua" },
-    cssPaddingProp = { link = "AthensAqua" },
-    cssDimensionProp = { link = "AthensAqua" },
-    cssRenderProp = { link = "AthensAqua" },
-    cssColorProp = { link = "AthensAqua" },
-    cssGeneratedContentProp = { link = "AthensAqua" },
-    javaScriptBraces = { link = "AthensFg1" },
-    javaScriptFunction = { link = "AthensAqua" },
-    javaScriptIdentifier = { link = "AthensRed" },
-    javaScriptMember = { link = "AthensBlue" },
-    javaScriptNumber = { link = "AthensPurple" },
-    javaScriptNull = { link = "AthensPurple" },
-    javaScriptParens = { link = "AthensFg3" },
-    typescriptReserved = { link = "AthensAqua" },
-    typescriptLabel = { link = "AthensAqua" },
-    typescriptFuncKeyword = { link = "AthensAqua" },
-    typescriptIdentifier = { link = "AthensOrange" },
-    typescriptBraces = { link = "AthensFg1" },
-    typescriptEndColons = { link = "AthensFg1" },
-    typescriptDOMObjects = { link = "AthensFg1" },
-    typescriptAjaxMethods = { link = "AthensFg1" },
-    typescriptLogicSymbols = { link = "AthensFg1" },
-    typescriptDocSeeTag = { link = "Comment" },
-    typescriptDocParam = { link = "Comment" },
-    typescriptDocTags = { link = "vimCommentTitle" },
-    typescriptGlobalObjects = { link = "AthensFg1" },
-    typescriptParens = { link = "AthensFg3" },
-    typescriptOpSymbols = { link = "AthensFg3" },
-    typescriptHtmlElemProperties = { link = "AthensFg1" },
-    typescriptNull = { link = "AthensPurple" },
-    typescriptInterpolationDelimiter = { link = "AthensAqua" },
-    purescriptModuleKeyword = { link = "AthensAqua" },
-    purescriptModuleName = { link = "AthensFg1" },
-    purescriptWhere = { link = "AthensAqua" },
-    purescriptDelimiter = { link = "AthensFg4" },
-    purescriptType = { link = "AthensFg1" },
-    purescriptImportKeyword = { link = "AthensAqua" },
-    purescriptHidingKeyword = { link = "AthensAqua" },
-    purescriptAsKeyword = { link = "AthensAqua" },
-    purescriptStructure = { link = "AthensAqua" },
-    purescriptOperator = { link = "AthensBlue" },
-    purescriptTypeVar = { link = "AthensFg1" },
-    purescriptConstructor = { link = "AthensFg1" },
-    purescriptFunction = { link = "AthensFg1" },
-    purescriptConditional = { link = "AthensOrange" },
-    purescriptBacktick = { link = "AthensOrange" },
-    coffeeExtendedOp = { link = "AthensFg3" },
-    coffeeSpecialOp = { link = "AthensFg3" },
-    coffeeCurly = { link = "AthensOrange" },
-    coffeeParen = { link = "AthensFg3" },
-    coffeeBracket = { link = "AthensOrange" },
-    rubyStringDelimiter = { link = "AthensGreen" },
-    rubyInterpolationDelimiter = { link = "AthensAqua" },
-    rubyDefinedOperator = { link = "rubyKeyword" },
-    objcTypeModifier = { link = "AthensRed" },
-    objcDirective = { link = "AthensBlue" },
-    goDirective = { link = "AthensAqua" },
-    goConstants = { link = "AthensPurple" },
-    goDeclaration = { link = "AthensRed" },
-    goDeclType = { link = "AthensBlue" },
-    goBuiltins = { link = "AthensOrange" },
-    luaIn = { link = "AthensRed" },
-    luaFunction = { link = "AthensAqua" },
-    luaTable = { link = "AthensOrange" },
-    moonSpecialOp = { link = "AthensFg3" },
-    moonExtendedOp = { link = "AthensFg3" },
-    moonFunction = { link = "AthensFg3" },
-    moonObject = { link = "AthensYellow" },
-    javaAnnotation = { link = "AthensBlue" },
-    javaDocTags = { link = "AthensAqua" },
-    javaCommentTitle = { link = "vimCommentTitle" },
-    javaParen = { link = "AthensFg3" },
-    javaParen1 = { link = "AthensFg3" },
-    javaParen2 = { link = "AthensFg3" },
-    javaParen3 = { link = "AthensFg3" },
-    javaParen4 = { link = "AthensFg3" },
-    javaParen5 = { link = "AthensFg3" },
-    javaOperator = { link = "AthensOrange" },
-    javaVarArg = { link = "AthensGreen" },
-    elixirDocString = { link = "Comment" },
-    elixirStringDelimiter = { link = "AthensGreen" },
-    elixirInterpolationDelimiter = { link = "AthensAqua" },
-    elixirModuleDeclaration = { link = "AthensYellow" },
-    scalaNameDefinition = { link = "AthensFg1" },
-    scalaCaseFollowing = { link = "AthensFg1" },
-    scalaCapitalWord = { link = "AthensFg1" },
-    scalaTypeExtension = { link = "AthensFg1" },
-    scalaKeyword = { link = "AthensRed" },
-    scalaKeywordModifier = { link = "AthensRed" },
-    scalaSpecial = { link = "AthensAqua" },
-    scalaOperator = { link = "AthensFg1" },
-    scalaTypeDeclaration = { link = "AthensYellow" },
-    scalaTypeTypePostDeclaration = { link = "AthensYellow" },
-    scalaInstanceDeclaration = { link = "AthensFg1" },
-    scalaInterpolation = { link = "AthensAqua" },
+    xmlTag = { link = "AthensAquaBold" }, --[[fix]]
+    xmlEndTag = { link = "AthensAquaBold" }, --[[fix]]
+    xmlTagName = { link = "AthensBlue" }, --[[fix]]
+    xmlEqual = { link = "AthensBlue" }, --[[fix]]
+    docbkKeyword = { link = "AthensAquaBold" }, --[[fix]]
+    xmlDocTypeDecl = { link = "AthensGray" }, --[[fix]]
+    xmlDocTypeKeyword = { link = "AthensPurple" }, --[[fix]]
+    xmlCdataStart = { link = "AthensGray" }, --[[fix]]
+    xmlCdataCdata = { link = "AthensPurple" }, --[[fix]]
+    dtdFunction = { link = "AthensGray" }, --[[fix]]
+    dtdTagName = { link = "AthensPurple" }, --[[fix]]
+    xmlAttrib = { link = "AthensOrange" }, --[[fix]]
+    xmlProcessingDelim = { link = "AthensGray" }, --[[fix]]
+    dtdParamEntityPunct = { link = "AthensGray" }, --[[fix]]
+    dtdParamEntityDPunct = { link = "AthensGray" }, --[[fix]]
+    xmlAttribPunct = { link = "AthensGray" }, --[[fix]]
+    xmlEntity = { link = "AthensRed" }, --[[fix]]
+    xmlEntityPunct = { link = "AthensRed" }, --[[fix]]
+    clojureKeyword = { link = "AthensBlue" }, --[[fix]]
+    clojureCond = { link = "AthensOrange" }, --[[fix]]
+    clojureSpecial = { link = "AthensOrange" }, --[[fix]]
+    clojureDefine = { link = "AthensOrange" }, --[[fix]]
+    clojureFunc = { link = "AthensYellow" }, --[[fix]]
+    clojureRepeat = { link = "AthensYellow" }, --[[fix]]
+    clojureCharacter = { link = "AthensAqua" }, --[[fix]]
+    clojureStringEscape = { link = "AthensAqua" }, --[[fix]]
+    clojureException = { link = "AthensRed" }, --[[fix]]
+    clojureRegexp = { link = "AthensAqua" }, --[[fix]]
+    clojureRegexpEscape = { link = "AthensAqua" }, --[[fix]]
+    clojureRegexpCharClass = { fg = colors.fg3, bold = config.bold }, --[[fix]]
+    clojureRegexpMod = { link = "clojureRegexpCharClass" }, --[[fix]]
+    clojureRegexpQuantifier = { link = "clojureRegexpCharClass" }, --[[fix]]
+    clojureParen = { link = "AthensFg3" }, --[[fix]]
+    clojureAnonArg = { link = "AthensYellow" }, --[[fix]]
+    clojureVariable = { link = "AthensBlue" }, --[[fix]]
+    clojureMacro = { link = "AthensOrange" }, --[[fix]]
+    clojureMeta = { link = "AthensYellow" }, --[[fix]]
+    clojureDeref = { link = "AthensYellow" }, --[[fix]]
+    clojureQuote = { link = "AthensYellow" }, --[[fix]]
+    clojureUnquote = { link = "AthensYellow" }, --[[fix]]
+    cOperator = { link = "AthensPurple" }, --[[fix]]
+    cppOperator = { link = "AthensPurple" }, --[[fix]]
+    cStructure = { link = "AthensOrange" }, --[[fix]]
+    pythonBuiltin = { link = "AthensOrange" }, --[[fix]]
+    pythonBuiltinObj = { link = "AthensOrange" }, --[[fix]]
+    pythonBuiltinFunc = { link = "AthensOrange" }, --[[fix]]
+    pythonFunction = { link = "AthensAqua" }, --[[fix]]
+    pythonDecorator = { link = "AthensRed" }, --[[fix]]
+    pythonInclude = { link = "AthensBlue" }, --[[fix]]
+    pythonImport = { link = "AthensBlue" }, --[[fix]]
+    pythonRun = { link = "AthensBlue" }, --[[fix]]
+    pythonCoding = { link = "AthensBlue" }, --[[fix]]
+    pythonOperator = { link = "AthensRed" }, --[[fix]]
+    pythonException = { link = "AthensRed" }, --[[fix]]
+    pythonExceptions = { link = "AthensPurple" }, --[[fix]]
+    pythonBoolean = { link = "AthensPurple" }, --[[fix]]
+    pythonDot = { link = "AthensFg3" }, --[[fix]]
+    pythonConditional = { link = "AthensRed" }, --[[fix]]
+    pythonRepeat = { link = "AthensRed" }, --[[fix]]
+    pythonDottedName = { link = "AthensGreenBold" }, --[[fix]]
+    cssBraces = { link = "AthensBlue" }, --[[fix]]
+    cssFunctionName = { link = "AthensYellow" }, --[[fix]]
+    cssIdentifier = { link = "AthensOrange" }, --[[fix]]
+    cssClassName = { link = "AthensGreen" }, --[[fix]]
+    cssColor = { link = "AthensBlue" }, --[[fix]]
+    cssSelectorOp = { link = "AthensBlue" }, --[[fix]]
+    cssSelectorOp2 = { link = "AthensBlue" }, --[[fix]]
+    cssImportant = { link = "AthensGreen" }, --[[fix]]
+    cssVendor = { link = "AthensFg1" }, --[[fix]]
+    cssTextProp = { link = "AthensAqua" }, --[[fix]]
+    cssAnimationProp = { link = "AthensAqua" }, --[[fix]]
+    cssUIProp = { link = "AthensYellow" }, --[[fix]]
+    cssTransformProp = { link = "AthensAqua" }, --[[fix]]
+    cssTransitionProp = { link = "AthensAqua" }, --[[fix]]
+    cssPrintProp = { link = "AthensAqua" }, --[[fix]]
+    cssPositioningProp = { link = "AthensYellow" }, --[[fix]]
+    cssBoxProp = { link = "AthensAqua" }, --[[fix]]
+    cssFontDescriptorProp = { link = "AthensAqua" }, --[[fix]]
+    cssFlexibleBoxProp = { link = "AthensAqua" }, --[[fix]]
+    cssBorderOutlineProp = { link = "AthensAqua" }, --[[fix]]
+    cssBackgroundProp = { link = "AthensAqua" }, --[[fix]]
+    cssMarginProp = { link = "AthensAqua" }, --[[fix]]
+    cssListProp = { link = "AthensAqua" }, --[[fix]]
+    cssTableProp = { link = "AthensAqua" }, --[[fix]]
+    cssFontProp = { link = "AthensAqua" }, --[[fix]]
+    cssPaddingProp = { link = "AthensAqua" }, --[[fix]]
+    cssDimensionProp = { link = "AthensAqua" }, --[[fix]]
+    cssRenderProp = { link = "AthensAqua" }, --[[fix]]
+    cssColorProp = { link = "AthensAqua" }, --[[fix]]
+    cssGeneratedContentProp = { link = "AthensAqua" }, --[[fix]]
+    javaScriptBraces = { link = "AthensFg1" }, --[[fix]]
+    javaScriptFunction = { link = "AthensAqua" }, --[[fix]]
+    javaScriptIdentifier = { link = "AthensRed" }, --[[fix]]
+    javaScriptMember = { link = "AthensBlue" }, --[[fix]]
+    javaScriptNumber = { link = "AthensPurple" }, --[[fix]]
+    javaScriptNull = { link = "AthensPurple" }, --[[fix]]
+    javaScriptParens = { link = "AthensFg3" }, --[[fix]]
+    typescriptReserved = { link = "AthensAqua" }, --[[fix]]
+    typescriptLabel = { link = "AthensAqua" }, --[[fix]]
+    typescriptFuncKeyword = { link = "AthensAqua" }, --[[fix]]
+    typescriptIdentifier = { link = "AthensOrange" }, --[[fix]]
+    typescriptBraces = { link = "AthensFg1" }, --[[fix]]
+    typescriptEndColons = { link = "AthensFg1" }, --[[fix]]
+    typescriptDOMObjects = { link = "AthensFg1" }, --[[fix]]
+    typescriptAjaxMethods = { link = "AthensFg1" }, --[[fix]]
+    typescriptLogicSymbols = { link = "AthensFg1" }, --[[fix]]
+    typescriptDocSeeTag = { link = "Comment" }, --[[fix]]
+    typescriptDocParam = { link = "Comment" }, --[[fix]]
+    typescriptDocTags = { link = "vimCommentTitle" }, --[[fix]]
+    typescriptGlobalObjects = { link = "AthensFg1" }, --[[fix]]
+    typescriptParens = { link = "AthensFg3" }, --[[fix]]
+    typescriptOpSymbols = { link = "AthensFg3" }, --[[fix]]
+    typescriptHtmlElemProperties = { link = "AthensFg1" }, --[[fix]]
+    typescriptNull = { link = "AthensPurple" }, --[[fix]]
+    typescriptInterpolationDelimiter = { link = "AthensAqua" }, --[[fix]]
+    purescriptModuleKeyword = { link = "AthensAqua" }, --[[fix]]
+    purescriptModuleName = { link = "AthensFg1" }, --[[fix]]
+    purescriptWhere = { link = "AthensAqua" }, --[[fix]]
+    purescriptDelimiter = { link = "AthensFg4" }, --[[fix]]
+    purescriptType = { link = "AthensFg1" }, --[[fix]]
+    purescriptImportKeyword = { link = "AthensAqua" }, --[[fix]]
+    purescriptHidingKeyword = { link = "AthensAqua" }, --[[fix]]
+    purescriptAsKeyword = { link = "AthensAqua" }, --[[fix]]
+    purescriptStructure = { link = "AthensAqua" }, --[[fix]]
+    purescriptOperator = { link = "AthensBlue" }, --[[fix]]
+    purescriptTypeVar = { link = "AthensFg1" }, --[[fix]]
+    purescriptConstructor = { link = "AthensFg1" }, --[[fix]]
+    purescriptFunction = { link = "AthensFg1" }, --[[fix]]
+    purescriptConditional = { link = "AthensOrange" }, --[[fix]]
+    purescriptBacktick = { link = "AthensOrange" }, --[[fix]]
+    coffeeExtendedOp = { link = "AthensFg3" }, --[[fix]]
+    coffeeSpecialOp = { link = "AthensFg3" }, --[[fix]]
+    coffeeCurly = { link = "AthensOrange" }, --[[fix]]
+    coffeeParen = { link = "AthensFg3" }, --[[fix]]
+    coffeeBracket = { link = "AthensOrange" }, --[[fix]]
+    rubyStringDelimiter = { link = "AthensGreen" }, --[[fix]]
+    rubyInterpolationDelimiter = { link = "AthensAqua" }, --[[fix]]
+    rubyDefinedOperator = { link = "rubyKeyword" }, --[[fix]]
+    objcTypeModifier = { link = "AthensRed" }, --[[fix]]
+    objcDirective = { link = "AthensBlue" }, --[[fix]]
+    goDirective = { link = "AthensAqua" }, --[[fix]]
+    goConstants = { link = "AthensPurple" }, --[[fix]]
+    goDeclaration = { link = "AthensRed" }, --[[fix]]
+    goDeclType = { link = "AthensBlue" }, --[[fix]]
+    goBuiltins = { link = "AthensOrange" }, --[[fix]]
+    luaIn = { link = "AthensRed" }, --[[fix]]
+    luaFunction = { link = "AthensAqua" }, --[[fix]]
+    luaTable = { link = "AthensOrange" }, --[[fix]]
+    moonSpecialOp = { link = "AthensFg3" }, --[[fix]]
+    moonExtendedOp = { link = "AthensFg3" }, --[[fix]]
+    moonFunction = { link = "AthensFg3" }, --[[fix]]
+    moonObject = { link = "AthensYellow" }, --[[fix]]
+    javaAnnotation = { link = "AthensBlue" }, --[[fix]]
+    javaDocTags = { link = "AthensAqua" }, --[[fix]]
+    javaCommentTitle = { link = "vimCommentTitle" }, --[[fix]]
+    javaParen = { link = "AthensFg3" }, --[[fix]]
+    javaParen1 = { link = "AthensFg3" }, --[[fix]]
+    javaParen2 = { link = "AthensFg3" }, --[[fix]]
+    javaParen3 = { link = "AthensFg3" }, --[[fix]]
+    javaParen4 = { link = "AthensFg3" }, --[[fix]]
+    javaParen5 = { link = "AthensFg3" }, --[[fix]]
+    javaOperator = { link = "AthensOrange" }, --[[fix]]
+    javaVarArg = { link = "AthensGreen" }, --[[fix]]
+    elixirDocString = { link = "Comment" }, --[[fix]]
+    elixirStringDelimiter = { link = "AthensGreen" }, --[[fix]]
+    elixirInterpolationDelimiter = { link = "AthensAqua" }, --[[fix]]
+    elixirModuleDeclaration = { link = "AthensYellow" }, --[[fix]]
+    scalaNameDefinition = { link = "AthensFg1" }, --[[fix]]
+    scalaCaseFollowing = { link = "AthensFg1" }, --[[fix]]
+    scalaCapitalWord = { link = "AthensFg1" }, --[[fix]]
+    scalaTypeExtension = { link = "AthensFg1" }, --[[fix]]
+    scalaKeyword = { link = "AthensRed" }, --[[fix]]
+    scalaKeywordModifier = { link = "AthensRed" }, --[[fix]]
+    scalaSpecial = { link = "AthensAqua" }, --[[fix]]
+    scalaOperator = { link = "AthensFg1" }, --[[fix]]
+    scalaTypeDeclaration = { link = "AthensYellow" }, --[[fix]]
+    scalaTypeTypePostDeclaration = { link = "AthensYellow" }, --[[fix]]
+    scalaInstanceDeclaration = { link = "AthensFg1" }, --[[fix]]
+    scalaInterpolation = { link = "AthensAqua" }, --[[fix]]
     markdownItalic = { fg = colors.fg3, italic = true },
     markdownBold = { fg = colors.fg3, bold = config.bold },
     markdownBoldItalic = { fg = colors.fg3, bold = config.bold, italic = true },
-    markdownH1 = { link = "AthensGreenBold" },
-    markdownH2 = { link = "AthensGreenBold" },
-    markdownH3 = { link = "AthensYellowBold" },
-    markdownH4 = { link = "AthensYellowBold" },
-    markdownH5 = { link = "AthensYellow" },
-    markdownH6 = { link = "AthensYellow" },
-    markdownCode = { link = "AthensAqua" },
-    markdownCodeBlock = { link = "AthensAqua" },
-    markdownCodeDelimiter = { link = "AthensAqua" },
-    markdownBlockquote = { link = "AthensGray" },
-    markdownListMarker = { link = "AthensGray" },
-    markdownOrderedListMarker = { link = "AthensGray" },
-    markdownRule = { link = "AthensGray" },
-    markdownHeadingRule = { link = "AthensGray" },
-    markdownUrlDelimiter = { link = "AthensFg3" },
-    markdownLinkDelimiter = { link = "AthensFg3" },
-    markdownLinkTextDelimiter = { link = "AthensFg3" },
-    markdownHeadingDelimiter = { link = "AthensOrange" },
-    markdownUrl = { link = "AthensPurple" },
-    markdownUrlTitleDelimiter = { link = "AthensGreen" },
-    markdownLinkText = { fg = colors.gray, underline = config.underline },
-    markdownIdDeclaration = { link = "markdownLinkText" },
-    haskellType = { link = "AthensBlue" },
-    haskellIdentifier = { link = "AthensAqua" },
-    haskellSeparator = { link = "AthensFg4" },
-    haskellDelimiter = { link = "AthensOrange" },
-    haskellOperators = { link = "AthensPurple" },
-    haskellBacktick = { link = "AthensOrange" },
-    haskellStatement = { link = "AthensPurple" },
-    haskellConditional = { link = "AthensPurple" },
-    haskellLet = { link = "AthensRed" },
-    haskellDefault = { link = "AthensRed" },
-    haskellWhere = { link = "AthensRed" },
-    haskellBottom = { link = "AthensRedBold" },
-    haskellImportKeywords = { link = "AthensPurpleBold" },
-    haskellDeclKeyword = { link = "AthensOrange" },
-    haskellDecl = { link = "AthensOrange" },
-    haskellDeriving = { link = "AthensPurple" },
-    haskellAssocType = { link = "AthensAqua" },
-    haskellNumber = { link = "AthensAqua" },
-    haskellPragma = { link = "AthensRedBold" },
-    haskellTH = { link = "AthensAquaBold" },
-    haskellForeignKeywords = { link = "AthensGreen" },
-    haskellKeyword = { link = "AthensRed" },
-    haskellFloat = { link = "AthensAqua" },
-    haskellInfix = { link = "AthensPurple" },
-    haskellQuote = { link = "AthensGreenBold" },
-    haskellShebang = { link = "AthensYellowBold" },
-    haskellLiquid = { link = "AthensPurpleBold" },
-    haskellQuasiQuoted = { link = "AthensBlueBold" },
-    haskellRecursiveDo = { link = "AthensPurple" },
-    haskellQuotedType = { link = "AthensRed" },
-    haskellPreProc = { link = "AthensFg4" },
-    haskellTypeRoles = { link = "AthensRedBold" },
-    haskellTypeForall = { link = "AthensRed" },
-    haskellPatternKeyword = { link = "AthensBlue" },
-    jsonKeyword = { link = "AthensGreen" },
-    jsonQuote = { link = "AthensGreen" },
-    jsonBraces = { link = "AthensFg1" },
-    jsonString = { link = "AthensFg1" },
-    mailQuoted1 = { link = "AthensAqua" },
-    mailQuoted2 = { link = "AthensPurple" },
-    mailQuoted3 = { link = "AthensYellow" },
-    mailQuoted4 = { link = "AthensGreen" },
-    mailQuoted5 = { link = "AthensRed" },
-    mailQuoted6 = { link = "AthensOrange" },
-    mailSignature = { link = "Comment" },
-    csBraces = { link = "AthensFg1" },
-    csEndColon = { link = "AthensFg1" },
-    csLogicSymbols = { link = "AthensFg1" },
-    csParens = { link = "AthensFg3" },
-    csOpSymbols = { link = "AthensFg3" },
-    csInterpolationDelimiter = { link = "AthensFg3" },
-    csInterpolationAlignDel = { link = "AthensAquaBold" },
-    csInterpolationFormat = { link = "AthensAqua" },
-    csInterpolationFormatDel = { link = "AthensAquaBold" },
-    rustSigil = { link = "AthensOrange" },
-    rustEscape = { link = "AthensAqua" },
-    rustStringContinuation = { link = "AthensAqua" },
-    rustEnum = { link = "AthensAqua" },
-    rustStructure = { link = "AthensAqua" },
-    rustModPathSep = { link = "AthensFg2" },
-    rustCommentLineDoc = { link = "Comment" },
-    rustDefault = { link = "AthensAqua" },
-    ocamlOperator = { link = "AthensFg1" },
-    ocamlKeyChar = { link = "AthensOrange" },
-    ocamlArrow = { link = "AthensOrange" },
-    ocamlInfixOpKeyword = { link = "AthensRed" },
-    ocamlConstructor = { link = "AthensOrange" },
-    LspSagaCodeActionTitle = { link = "Title" },
-    LspSagaCodeActionBorder = { link = "AthensFg1" },
+    markdownH1 = { link = "AthensGreenBold" }, --[[fix]]
+    markdownH2 = { link = "AthensGreenBold" }, --[[fix]]
+    markdownH3 = { link = "AthensYellowBold" }, --[[fix]]
+    markdownH4 = { link = "AthensYellowBold" }, --[[fix]]
+    markdownH5 = { link = "AthensYellow" }, --[[fix]]
+    markdownH6 = { link = "AthensYellow" }, --[[fix]]
+    markdownCode = { link = "AthensAqua" }, --[[fix]]
+    markdownCodeBlock = { link = "AthensAqua" }, --[[fix]]
+    markdownCodeDelimiter = { link = "AthensAqua" }, --[[fix]]
+    markdownBlockquote = { link = "AthensGray" }, --[[fix]]
+    markdownListMarker = { link = "AthensGray" }, --[[fix]]
+    markdownOrderedListMarker = { link = "AthensGray" }, --[[fix]]
+    markdownRule = { link = "AthensGray" }, --[[fix]]
+    markdownHeadingRule = { link = "AthensGray" }, --[[fix]]
+    markdownUrlDelimiter = { link = "AthensFg3" }, --[[fix]]
+    markdownLinkDelimiter = { link = "AthensFg3" }, --[[fix]]
+    markdownLinkTextDelimiter = { link = "AthensFg3" }, --[[fix]]
+    markdownHeadingDelimiter = { link = "AthensOrange" }, --[[fix]]
+    markdownUrl = { link = "AthensPurple" }, --[[fix]]
+    markdownUrlTitleDelimiter = { link = "AthensGreen" }, --[[fix]]
+    markdownLinkText = { fg = colors.gray, underline = config.underline }, --[[fix]]
+    markdownIdDeclaration = { link = "markdownLinkText" }, --[[fix]]
+    haskellType = { link = "AthensBlue" }, --[[fix]]
+    haskellIdentifier = { link = "AthensAqua" }, --[[fix]]
+    haskellSeparator = { link = "AthensFg4" }, --[[fix]]
+    haskellDelimiter = { link = "AthensOrange" }, --[[fix]]
+    haskellOperators = { link = "AthensPurple" }, --[[fix]]
+    haskellBacktick = { link = "AthensOrange" }, --[[fix]]
+    haskellStatement = { link = "AthensPurple" }, --[[fix]]
+    haskellConditional = { link = "AthensPurple" }, --[[fix]]
+    haskellLet = { link = "AthensRed" }, --[[fix]]
+    haskellDefault = { link = "AthensRed" }, --[[fix]]
+    haskellWhere = { link = "AthensRed" }, --[[fix]]
+    haskellBottom = { link = "AthensRedBold" }, --[[fix]]
+    haskellImportKeywords = { link = "AthensPurpleBold" }, --[[fix]]
+    haskellDeclKeyword = { link = "AthensOrange" }, --[[fix]]
+    haskellDecl = { link = "AthensOrange" }, --[[fix]]
+    haskellDeriving = { link = "AthensPurple" }, --[[fix]]
+    haskellAssocType = { link = "AthensAqua" }, --[[fix]]
+    haskellNumber = { link = "AthensAqua" }, --[[fix]]
+    haskellPragma = { link = "AthensRedBold" }, --[[fix]]
+    haskellTH = { link = "AthensAquaBold" }, --[[fix]]
+    haskellForeignKeywords = { link = "AthensGreen" }, --[[fix]]
+    haskellKeyword = { link = "AthensRed" }, --[[fix]]
+    haskellFloat = { link = "AthensAqua" }, --[[fix]]
+    haskellInfix = { link = "AthensPurple" }, --[[fix]]
+    haskellQuote = { link = "AthensGreenBold" }, --[[fix]]
+    haskellShebang = { link = "AthensYellowBold" }, --[[fix]]
+    haskellLiquid = { link = "AthensPurpleBold" }, --[[fix]]
+    haskellQuasiQuoted = { link = "AthensBlueBold" }, --[[fix]]
+    haskellRecursiveDo = { link = "AthensPurple" }, --[[fix]]
+    haskellQuotedType = { link = "AthensRed" }, --[[fix]]
+    haskellPreProc = { link = "AthensFg4" }, --[[fix]]
+    haskellTypeRoles = { link = "AthensRedBold" }, --[[fix]]
+    haskellTypeForall = { link = "AthensRed" }, --[[fix]]
+    haskellPatternKeyword = { link = "AthensBlue" }, --[[fix]]
+    jsonKeyword = { link = "AthensGreen" }, --[[fix]]
+    jsonQuote = { link = "AthensGreen" }, --[[fix]]
+    jsonBraces = { link = "AthensFg1" }, --[[fix]]
+    jsonString = { link = "AthensFg1" }, --[[fix]]
+    mailQuoted1 = { link = "AthensAqua" }, --[[fix]]
+    mailQuoted2 = { link = "AthensPurple" }, --[[fix]]
+    mailQuoted3 = { link = "AthensYellow" }, --[[fix]]
+    mailQuoted4 = { link = "AthensGreen" }, --[[fix]]
+    mailQuoted5 = { link = "AthensRed" }, --[[fix]]
+    mailQuoted6 = { link = "AthensOrange" }, --[[fix]]
+    mailSignature = { link = "Comment" }, --[[fix]]
+    csBraces = { link = "AthensFg1" }, --[[fix]]
+    csEndColon = { link = "AthensFg1" }, --[[fix]]
+    csLogicSymbols = { link = "AthensFg1" }, --[[fix]]
+    csParens = { link = "AthensFg3" }, --[[fix]]
+    csOpSymbols = { link = "AthensFg3" }, --[[fix]]
+    csInterpolationDelimiter = { link = "AthensFg3" }, --[[fix]]
+    csInterpolationAlignDel = { link = "AthensAquaBold" }, --[[fix]]
+    csInterpolationFormat = { link = "AthensAqua" }, --[[fix]]
+    csInterpolationFormatDel = { link = "AthensAquaBold" }, --[[fix]]
+    rustSigil = { link = "AthensOrange" }, --[[fix]]
+    rustEscape = { link = "AthensAqua" }, --[[fix]]
+    rustStringContinuation = { link = "AthensAqua" }, --[[fix]]
+    rustEnum = { link = "AthensAqua" }, --[[fix]]
+    rustStructure = { link = "AthensAqua" }, --[[fix]]
+    rustModPathSep = { link = "AthensFg2" }, --[[fix]]
+    rustCommentLineDoc = { link = "Comment" }, --[[fix]]
+    rustDefault = { link = "AthensAqua" }, --[[fix]]
+    ocamlOperator = { link = "AthensFg1" }, --[[fix]]
+    ocamlKeyChar = { link = "AthensOrange" }, --[[fix]]
+    ocamlArrow = { link = "AthensOrange" }, --[[fix]]
+    ocamlInfixOpKeyword = { link = "AthensRed" }, --[[fix]]
+    ocamlConstructor = { link = "AthensOrange" }, --[[fix]]
+    LspSagaCodeActionTitle = { link = "Title" }, --[[fix]]
+    LspSagaCodeActionBorder = { link = "AthensFg1" }, --[[fix]]
     LspSagaCodeActionContent = { fg = colors.green, bold = config.bold },
-    LspSagaLspFinderBorder = { link = "AthensFg1" },
-    LspSagaAutoPreview = { link = "AthensOrange" },
+    LspSagaLspFinderBorder = { link = "AthensFg1" }, --[[fix]]
+    LspSagaAutoPreview = { link = "AthensOrange" }, --[[fix]]
     TargetWord = { fg = colors.blue, bold = config.bold },
-    FinderSeparator = { link = "AthensAqua" },
-    LspSagaDefPreviewBorder = { link = "AthensBlue" },
-    LspSagaHoverBorder = { link = "AthensOrange" },
-    LspSagaRenameBorder = { link = "AthensBlue" },
-    LspSagaDiagnosticSource = { link = "AthensOrange" },
-    LspSagaDiagnosticBorder = { link = "AthensPurple" },
-    LspSagaDiagnosticHeader = { link = "AthensGreen" },
-    LspSagaSignatureHelpBorder = { link = "AthensGreen" },
-    SagaShadow = { link = "AthensBg0" },
-    DashboardShortCut = { link = "AthensOrange" },
-    DashboardHeader = { link = "AthensAqua" },
-    DashboardCenter = { link = "AthensYellow" },
-    DashboardFooter = { fg = colors.purple, italic = true },
-    MasonHighlight = { link = "AthensAqua" },
+    FinderSeparator = { link = "AthensAqua" }, --[[fix]]
+    LspSagaDefPreviewBorder = { link = "AthensBlue" }, --[[fix]]
+    LspSagaHoverBorder = { link = "AthensOrange" }, --[[fix]]
+    LspSagaRenameBorder = { link = "AthensBlue" }, --[[fix]]
+    LspSagaDiagnosticSource = { link = "AthensOrange" }, --[[fix]]
+    LspSagaDiagnosticBorder = { link = "AthensPurple" }, --[[fix]]
+    LspSagaDiagnosticHeader = { link = "AthensGreen" }, --[[fix]]
+    LspSagaSignatureHelpBorder = { link = "AthensGreen" }, --[[fix]]
+    SagaShadow = { link = "AthensBg0" }, --[[fix]]
+    DashboardShortCut = { link = "AthensOrange" }, --[[fix]]
+    DashboardHeader = { link = "AthensAqua" }, --[[fix]]
+    DashboardCenter = { link = "AthensYellow" }, --[[fix]]
+    DashboardFooter = { fg = colors.purple, italic = true }, --[[fix]]
+    MasonHighlight = { link = "AthensAqua" }, --[[fix]]
     MasonHighlightBlock = { fg = colors.bg0, bg = colors.blue },
     MasonHighlightBlockBold = { fg = colors.bg0, bg = colors.blue, bold = true },
     MasonHighlightSecondary = { fg = colors.yellow },
     MasonHighlightBlockSecondary = { fg = colors.bg0, bg = colors.yellow },
     MasonHighlightBlockBoldSecondary = { fg = colors.bg0, bg = colors.yellow, bold = true },
-    MasonHeader = { link = "MasonHighlightBlockBoldSecondary" },
-    MasonHeaderSecondary = { link = "MasonHighlightBlockBold" },
+    MasonHeader = { link = "MasonHighlightBlockBoldSecondary" }, --[[fix]]
+    MasonHeaderSecondary = { link = "MasonHighlightBlockBold" }, --[[fix]]
     MasonMuted = { fg = colors.fg4 },
     MasonMutedBlock = { fg = colors.bg0, bg = colors.fg4 },
     MasonMutedBlockBold = { fg = colors.bg0, bg = colors.fg4, bold = true },
-    LspInlayHint = { link = "comment" },
-    CarbonFile = { link = "AthensFg1" },
-    CarbonExe = { link = "AthensYellow" },
-    CarbonSymlink = { link = "AthensAqua" },
-    CarbonBrokenSymlink = { link = "AthensRed" },
-    CarbonIndicator = { link = "AthensGray" },
-    CarbonDanger = { link = "AthensRed" },
-    CarbonPending = { link = "AthensYellow" },
-    NoiceCursor = { link = "TermCursor" },
-    NotifyDEBUGBorder = { link = "AthensBlue" },
-    NotifyDEBUGIcon = { link = "AthensBlue" },
-    NotifyDEBUGTitle = { link = "AthensBlue" },
-    NotifyERRORBorder = { link = "AthensRed" },
-    NotifyERRORIcon = { link = "AthensRed" },
-    NotifyERRORTitle = { link = "AthensRed" },
-    NotifyINFOBorder = { link = "AthensAqua" },
-    NotifyINFOIcon = { link = "AthensAqua" },
-    NotifyINFOTitle = { link = "AthensAqua" },
-    NotifyTRACEBorder = { link = "AthensGreen" },
-    NotifyTRACEIcon = { link = "AthensGreen" },
-    NotifyTRACETitle = { link = "AthensGreen" },
-    NotifyWARNBorder = { link = "AthensYellow" },
-    NotifyWARNIcon = { link = "AthensYellow" },
-    NotifyWARNTitle = { link = "AthensYellow" },
-    IlluminatedWordText = { link = "LspReferenceText" },
-    IlluminatedWordRead = { link = "LspReferenceRead" },
-    IlluminatedWordWrite = { link = "LspReferenceWrite" },
-    TSRainbowRed = { fg = colors.red },
-    TSRainbowOrange = { fg = colors.orange },
-    TSRainbowYellow = { fg = colors.yellow },
-    TSRainbowGreen = { fg = colors.green },
-    TSRainbowBlue = { fg = colors.blue },
-    TSRainbowViolet = { fg = colors.purple },
-    TSRainbowCyan = { fg = colors.aqua },
-    RainbowDelimiterRed = { fg = colors.red },
-    RainbowDelimiterOrange = { fg = colors.orange },
-    RainbowDelimiterYellow = { fg = colors.yellow },
-    RainbowDelimiterGreen = { fg = colors.green },
-    RainbowDelimiterBlue = { fg = colors.blue },
-    RainbowDelimiterViolet = { fg = colors.purple },
-    RainbowDelimiterCyan = { fg = colors.aqua },
-    DapBreakpointSymbol = { fg = colors.red, bg = colors.bg1 },
-    DapStoppedSymbol = { fg = colors.green, bg = colors.bg1 },
-    DapUIBreakpointsCurrentLine = { link = "AthensYellow" },
-    DapUIBreakpointsDisabledLine = { link = "AthensGray" },
-    DapUIBreakpointsInfo = { link = "AthensAqua" },
-    DapUIBreakpointsLine = { link = "AthensYellow" },
-    DapUIBreakpointsPath = { link = "AthensBlue" },
-    DapUICurrentFrameName = { link = "AthensPurple" },
-    DapUIDecoration = { link = "AthensPurple" },
-    DapUIEndofBuffer = { link = "EndOfBuffer" },
-    DapUIFloatBorder = { link = "AthensAqua" },
-    DapUILineNumber = { link = "AthensYellow" },
-    DapUIModifiedValue = { link = "AthensRed" },
-    DapUIPlayPause = { fg = colors.green, bg = colors.bg1 },
-    DapUIRestart = { fg = colors.green, bg = colors.bg1 },
-    DapUIScope = { link = "AthensBlue" },
-    DapUISource = { link = "AthensFg1" },
-    DapUIStepBack = { fg = colors.blue, bg = colors.bg1 },
-    DapUIStepInto = { fg = colors.blue, bg = colors.bg1 },
-    DapUIStepOut = { fg = colors.blue, bg = colors.bg1 },
-    DapUIStepOver = { fg = colors.blue, bg = colors.bg1 },
-    DapUIStop = { fg = colors.red, bg = colors.bg1 },
-    DapUIStoppedThread = { link = "AthensBlue" },
-    DapUIThread = { link = "AthensBlue" },
-    DapUIType = { link = "AthensOrange" },
-    DapUIUnavailable = { link = "AthensGray" },
-    DapUIWatchesEmpty = { link = "AthensGray" },
-    DapUIWatchesError = { link = "AthensRed" },
-    DapUIWatchesValue = { link = "AthensYellow" },
-    DapUIWinSelect = { link = "AthensYellow" },
-    NeogitDiffDelete = { link = "DiffDelete" },
-    NeogitDiffAdd = { link = "DiffAdd" },
-    NeogitHunkHeader = { link = "WinBar" },
-    NeogitHunkHeaderHighlight = { link = "WinBarNC" },
-    DiffviewStatusModified = { link = "AthensGreenBold" },
-    DiffviewFilePanelInsertions = { link = "AthensGreenBold" },
-    DiffviewFilePanelDeletions = { link = "AthensRedBold" },
-    MiniAnimateCursor = { reverse = true, nocombine = true },
-    MiniAnimateNormalFloat = { fg = colors.fg1, bg = colors.bg1 },
-    MiniClueBorder = { link = "FloatBorder" },
-    MiniClueDescGroup = { link = "DiagnosticFloatingWarn" },
-    MiniClueDescSingle = { link = "NormalFloat" },
-    MiniClueNextKey = { link = "DiagnosticFloatingHint" },
-    MiniClueNextKeyWithPostkeys = { link = "DiagnosticFloatingError" },
-    MiniClueSeparator = { link = "DiagnosticFloatingInfo" },
-    MiniClueTitle = { link = "FloatTitle" },
-    MiniCompletionActiveParameter = { underline = true },
-    MiniCursorword = { underline = true },
-    MiniCursorwordCurrent = { underline = true },
-    MiniDepsChangeAdded = { link = "AthensGreen" },
-    MiniDepsChangeRemoved = { link = "AthensRed" },
-    MiniDepsHint = { link = "DiagnosticHint" },
-    MiniDepsInfo = { link = "DiagnosticInfo" },
-    MiniDepsMsgBreaking = { link = "DiagnosticWarn" },
-    MiniDepsPlaceholder = { link = "Comment" },
-    MiniDepsTitle = { link = "Title" },
-    MiniDepsTitleError = { link = "DiffDelete" },
-    MiniDepsTitleSame = { link = "DiffChange" },
-    MiniDepsTitleUpdate = { link = "DiffAdd" },
-    MiniDiffOverAdd = { link = "DiffAdd" },
-    MiniDiffOverChange = { link = "DiffText" },
-    MiniDiffOverContext = { link = "DiffChange" },
-    MiniDiffOverDelete = { link = "DiffDelete" },
-    MiniDiffSignAdd = { link = "AthensGreen" },
-    MiniDiffSignChange = { link = "AthensAqua" },
-    MiniDiffSignDelete = { link = "AthensRed" },
-    MiniFilesBorder = { link = "FloatBorder" },
-    MiniFilesBorderModified = { link = "DiagnosticFloatingWarn" },
-    MiniFilesCursorLine = { bg = colors.bg2 },
-    MiniFilesDirectory = { link = "Directory" },
-    MiniFilesFile = { link = "AthensFg1" },
-    MiniFilesNormal = { link = "NormalFloat" },
-    MiniFilesTitle = { link = "FloatTitle" },
-    MiniFilesTitleFocused = { link = "AthensOrangeBold" },
-    MiniHipatternsFixme = { fg = colors.bg0, bg = colors.red, bold = config.bold },
-    MiniHipatternsHack = { fg = colors.bg0, bg = colors.yellow, bold = config.bold },
-    MiniHipatternsNote = { fg = colors.bg0, bg = colors.blue, bold = config.bold },
-    MiniHipatternsTodo = { fg = colors.bg0, bg = colors.aqua, bold = config.bold },
-    MiniIconsAzure = { link = "AthensBlue" },
-    MiniIconsBlue = { link = "AthensBlue" },
-    MiniIconsCyan = { link = "AthensAqua" },
-    MiniIconsGreen = { link = "AthensGreen" },
-    MiniIconsGrey = { link = "AthensFg0" },
-    MiniIconsOrange = { link = "AthensOrange" },
-    MiniIconsPurple = { link = "AthensPurple" },
-    MiniIconsRed = { link = "AthensRed" },
-    MiniIconsYellow = { link = "AthensYellow" },
-    MiniIndentscopeSymbol = { link = "AthensGray" },
-    MiniIndentscopeSymbolOff = { link = "AthensYellow" },
-    MiniJump = { link = "AthensOrangeUnderline" },
-    MiniJump2dDim = { link = "AthensGray" },
-    MiniJump2dSpot = { fg = colors.orange, bold = config.bold, nocombine = true },
-    MiniJump2dSpotAhead = { fg = colors.aqua, bg = colors.bg0, nocombine = true },
-    MiniJump2dSpotUnique = { fg = colors.yellow, bold = config.bold, nocombine = true },
-    MiniMapNormal = { link = "NormalFloat" },
-    MiniMapSymbolCount = { link = "Special" },
-    MiniMapSymbolLine = { link = "Title" },
-    MiniMapSymbolView = { link = "Delimiter" },
-    MiniNotifyBorder = { link = "FloatBorder" },
-    MiniNotifyNormal = { link = "NormalFloat" },
-    MiniNotifyTitle = { link = "FloatTitle" },
-    MiniOperatorsExchangeFrom = { link = "IncSearch" },
-    MiniPickBorder = { link = "FloatBorder" },
-    MiniPickBorderBusy = { link = "DiagnosticFloatingWarn" },
-    MiniPickBorderText = { link = "FloatTitle" },
-    MiniPickIconDirectory = { link = "Directory" },
-    MiniPickIconFile = { link = "MiniPickNormal" },
-    MiniPickHeader = { link = "DiagnosticFloatingHint" },
-    MiniPickMatchCurrent = { bg = colors.bg2 },
-    MiniPickMatchMarked = { link = "Visual" },
-    MiniPickMatchRanges = { link = "DiagnosticFloatingHint" },
-    MiniPickNormal = { link = "NormalFloat" },
-    MiniPickPreviewLine = { link = "CursorLine" },
-    MiniPickPreviewRegion = { link = "IncSearch" },
-    MiniPickPrompt = { link = "DiagnosticFloatingInfo" },
-    MiniStarterCurrent = { nocombine = true },
-    MiniStarterFooter = { link = "AthensGray" },
-    MiniStarterHeader = { link = "Title" },
-    MiniStarterInactive = { link = "Comment" },
-    MiniStarterItem = { link = "Normal" },
-    MiniStarterItemBullet = { link = "Delimiter" },
-    MiniStarterItemPrefix = { link = "WarningMsg" },
-    MiniStarterSection = { link = "Delimiter" },
-    MiniStarterQuery = { link = "MoreMsg" },
-    MiniStatuslineDevinfo = { link = "StatusLine" },
-    MiniStatuslineFileinfo = { link = "StatusLine" },
-    MiniStatuslineFilename = { link = "StatusLineNC" },
-    MiniStatuslineInactive = { link = "StatusLineNC" },
-    MiniStatuslineModeCommand = { fg = colors.bg0, bg = colors.yellow, bold = config.bold },
-    MiniStatuslineModeInsert = { fg = colors.bg0, bg = colors.blue, bold = config.bold },
-    MiniStatuslineModeNormal = { fg = colors.bg0, bg = colors.fg1, bold = config.bold },
-    MiniStatuslineModeOther = { fg = colors.bg0, bg = colors.aqua, bold = config.bold },
-    MiniStatuslineModeReplace = { fg = colors.bg0, bg = colors.red, bold = config.bold },
-    MiniStatuslineModeVisual = { fg = colors.bg0, bg = colors.green, bold = config.bold },
-    MiniSurround = { link = "IncSearch" },
-    MiniTablineCurrent = { fg = colors.green, bg = colors.bg1, bold = config.bold, reverse = config.invert_tabline },
-    MiniTablineFill = { link = "TabLineFill" },
-    MiniTablineHidden = { fg = colors.bg4, bg = colors.bg1, reverse = config.invert_tabline },
-    MiniTablineModifiedCurrent = {
-      fg = colors.bg1,
-      bg = colors.green,
-      bold = config.bold,
-      reverse = config.invert_tabline,
-    },
-    MiniTablineModifiedHidden = { fg = colors.bg1, bg = colors.bg4, reverse = config.invert_tabline },
-    MiniTablineModifiedVisible = { fg = colors.bg1, bg = colors.fg1, reverse = config.invert_tabline },
-    MiniTablineTabpagesection = { link = "Search" },
-    MiniTablineVisible = { fg = colors.fg1, bg = colors.bg1, reverse = config.invert_tabline },
-    MiniTestEmphasis = { bold = config.bold },
-    MiniTestFail = { link = "AthensRedBold" },
-    MiniTestPass = { link = "AthensGreenBold" },
-    MiniTrailspace = { bg = colors.red },
-    ["@comment"] = { link = "Comment" },
-    ["@none"] = { bg = "NONE", fg = "NONE" },
-    ["@preproc"] = { link = "PreProc" },
-    ["@define"] = { link = "Define" },
-    ["@operator"] = { link = "Operator" },
-    ["@punctuation.delimiter"] = { link = "Delimiter" },
-    ["@punctuation.bracket"] = { link = "Delimiter" },
-    ["@punctuation.special"] = { link = "Delimiter" },
-    ["@string"] = { link = "String" },
-    ["@string.regex"] = { link = "String" },
-    ["@string.regexp"] = { link = "String" },
-    ["@string.escape"] = { link = "SpecialChar" },
-    ["@string.special"] = { link = "SpecialChar" },
-    ["@string.special.path"] = { link = "Underlined" },
-    ["@string.special.symbol"] = { link = "Identifier" },
-    ["@string.special.url"] = { link = "Underlined" },
-    ["@character"] = { link = "Character" },
-    ["@character.special"] = { link = "SpecialChar" },
-    ["@boolean"] = { link = "Boolean" },
-    ["@number"] = { link = "Number" },
-    ["@number.float"] = { link = "Float" },
-    ["@float"] = { link = "Float" },
-    ["@function"] = { link = "Function" },
-    ["@function.builtin"] = { link = "Special" },
-    ["@function.call"] = { link = "Function" },
-    ["@function.macro"] = { link = "Macro" },
-    ["@function.method"] = { link = "Function" },
-    ["@method"] = { link = "Function" },
-    ["@method.call"] = { link = "Function" },
-    ["@constructor"] = { link = "Special" },
-    ["@parameter"] = { link = "Identifier" },
-    ["@keyword"] = { link = "Keyword" },
-    ["@keyword.conditional"] = { link = "Conditional" },
-    ["@keyword.debug"] = { link = "Debug" },
-    ["@keyword.directive"] = { link = "PreProc" },
-    ["@keyword.directive.define"] = { link = "Define" },
-    ["@keyword.exception"] = { link = "Exception" },
-    ["@keyword.function"] = { link = "Keyword" },
-    ["@keyword.import"] = { link = "Include" },
-    ["@keyword.operator"] = { link = "AthensRed" },
-    ["@keyword.repeat"] = { link = "Repeat" },
-    ["@keyword.return"] = { link = "Keyword" },
-    ["@keyword.storage"] = { link = "StorageClass" },
-    ["@conditional"] = { link = "Conditional" },
-    ["@repeat"] = { link = "Repeat" },
-    ["@debug"] = { link = "Debug" },
-    ["@label"] = { link = "Label" },
-    ["@include"] = { link = "Include" },
-    ["@exception"] = { link = "Exception" },
-    ["@type"] = { link = "Type" },
-    ["@type.builtin"] = { link = "Type" },
-    ["@type.definition"] = { link = "Typedef" },
-    ["@type.qualifier"] = { link = "Type" },
-    ["@storageclass"] = { link = "StorageClass" },
-    ["@attribute"] = { link = "PreProc" },
-    ["@field"] = { link = "Identifier" },
-    ["@property"] = { link = "Identifier" },
-    ["@variable"] = { link = "AthensFg1" },
-    ["@variable.builtin"] = { link = "Special" },
-    ["@variable.member"] = { link = "Identifier" },
-    ["@variable.parameter"] = { link = "Identifier" },
-    ["@constant"] = { link = "Constant" },
-    ["@constant.builtin"] = { link = "Special" },
-    ["@constant.macro"] = { link = "Define" },
-    ["@markup"] = { link = "AthensFg1" },
-    ["@markup.strong"] = { bold = config.bold },
-    ["@markup.italic"] = { link = "@text.emphasis" },
-    ["@markup.underline"] = { underline = config.underline },
-    ["@markup.strikethrough"] = { strikethrough = config.strikethrough },
-    ["@markup.heading"] = { link = "Title" },
-    ["@markup.raw"] = { link = "String" },
-    ["@markup.math"] = { link = "Special" },
-    ["@markup.environment"] = { link = "Macro" },
-    ["@markup.environment.name"] = { link = "Type" },
-    ["@markup.link"] = { link = "Underlined" },
-    ["@markup.link.label"] = { link = "SpecialChar" },
-    ["@markup.list"] = { link = "Delimiter" },
-    ["@markup.list.checked"] = { link = "AthensGreen" },
-    ["@markup.list.unchecked"] = { link = "AthensGray" },
-    ["@comment.todo"] = { link = "Todo" },
-    ["@comment.note"] = { link = "SpecialComment" },
-    ["@comment.warning"] = { link = "WarningMsg" },
-    ["@comment.error"] = { link = "ErrorMsg" },
-    ["@diff.plus"] = { link = "diffAdded" },
-    ["@diff.minus"] = { link = "diffRemoved" },
-    ["@diff.delta"] = { link = "diffChanged" },
-    ["@module"] = { link = "AthensFg1" },
-    ["@namespace"] = { link = "AthensFg1" },
-    ["@symbol"] = { link = "Identifier" },
-    ["@text"] = { link = "AthensFg1" },
-    ["@text.strong"] = { bold = config.bold },
-    ["@text.emphasis"] = { italic = config.italic.emphasis },
-    ["@text.underline"] = { underline = config.underline },
-    ["@text.strike"] = { strikethrough = config.strikethrough },
-    ["@text.title"] = { link = "Title" },
-    ["@text.literal"] = { link = "String" },
-    ["@text.uri"] = { link = "Underlined" },
-    ["@text.math"] = { link = "Special" },
-    ["@text.environment"] = { link = "Macro" },
-    ["@text.environment.name"] = { link = "Type" },
-    ["@text.reference"] = { link = "Constant" },
-    ["@text.todo"] = { link = "Todo" },
-    ["@text.todo.checked"] = { link = "AthensGreen" },
-    ["@text.todo.unchecked"] = { link = "AthensGray" },
-    ["@text.note"] = { link = "SpecialComment" },
-    ["@text.note.comment"] = { fg = colors.purple, bold = config.bold },
-    ["@text.warning"] = { link = "WarningMsg" },
-    ["@text.danger"] = { link = "ErrorMsg" },
-    ["@text.danger.comment"] = { fg = colors.fg0, bg = colors.red, bold = config.bold },
-    ["@text.diff.add"] = { link = "diffAdded" },
-    ["@text.diff.delete"] = { link = "diffRemoved" },
-    ["@tag"] = { link = "Tag" },
-    ["@tag.attribute"] = { link = "Identifier" },
-    ["@tag.delimiter"] = { link = "Delimiter" },
-    ["@punctuation"] = { link = "Delimiter" },
-    ["@macro"] = { link = "Macro" },
-    ["@structure"] = { link = "Structure" },
-    ["@lsp.type.class"] = { link = "@type" },
-    ["@lsp.type.comment"] = { link = "@comment" },
-    ["@lsp.type.decorator"] = { link = "@macro" },
-    ["@lsp.type.enum"] = { link = "@type" },
-    ["@lsp.type.enumMember"] = { link = "@constant" },
-    ["@lsp.type.function"] = { link = "@function" },
-    ["@lsp.type.interface"] = { link = "@constructor" },
-    ["@lsp.type.macro"] = { link = "@macro" },
-    ["@lsp.type.method"] = { link = "@method" },
-    ["@lsp.type.namespace"] = { link = "@namespace" },
-    ["@lsp.type.parameter"] = { link = "@parameter" },
-    ["@lsp.type.property"] = { link = "@property" },
-    ["@lsp.type.struct"] = { link = "@type" },
-    ["@lsp.type.type"] = { link = "@type" },
-    ["@lsp.type.typeParameter"] = { link = "@type.definition" },
-    ["@lsp.type.variable"] = { link = "@variable" },
+    LspInlayHint = { link = "comment" }, --[[fix]]
+    CarbonFile = { link = "AthensFg1" }, --[[fix]]
+    CarbonExe = { link = "AthensYellow" }, --[[fix]]
+    CarbonSymlink = { link = "AthensAqua" }, --[[fix]]
+    CarbonBrokenSymlink = { link = "AthensRed" }, --[[fix]]
+    CarbonIndicator = { link = "AthensGray" }, --[[fix]]
+    CarbonDanger = { link = "AthensRed" }, --[[fix]]
+    CarbonPending = { link = "AthensYellow" }, --[[fix]]
+    NoiceCursor = { link = "TermCursor" }, --[[fix]]
+    NotifyDEBUGBorder = { link = "AthensBlue" }, --[[fix]]
+    NotifyDEBUGIcon = { link = "AthensBlue" }, --[[fix]]
+    NotifyDEBUGTitle = { link = "AthensBlue" }, --[[fix]]
+    NotifyERRORBorder = { link = "AthensRed" }, --[[fix]]
+    NotifyERRORIcon = { link = "AthensRed" }, --[[fix]]
+    NotifyERRORTitle = { link = "AthensRed" }, --[[fix]]
+    NotifyINFOBorder = { link = "AthensAqua" }, --[[fix]]
+    NotifyINFOIcon = { link = "AthensAqua" }, --[[fix]]
+    NotifyINFOTitle = { link = "AthensAqua" }, --[[fix]]
+    NotifyTRACEBorder = { link = "AthensGreen" }, --[[fix]]
+    NotifyTRACEIcon = { link = "AthensGreen" }, --[[fix]]
+    NotifyTRACETitle = { link = "AthensGreen" }, --[[fix]]
+    NotifyWARNBorder = { link = "AthensYellow" }, --[[fix]]
+    NotifyWARNIcon = { link = "AthensYellow" }, --[[fix]]
+    NotifyWARNTitle = { link = "AthensYellow" }, --[[fix]]
+    IlluminatedWordText = { link = "LspReferenceText" }, --[[fix]]
+    IlluminatedWordRead = { link = "LspReferenceRead" }, --[[fix]]
+    IlluminatedWordWrite = { link = "LspReferenceWrite" }, --[[fix]]
+    TSRainbowRed = { fg = colors.red }, --[[fix]]
+    TSRainbowOrange = { fg = colors.orange }, --[[fix]]
+    TSRainbowYellow = { fg = colors.yellow }, --[[fix]]
+    TSRainbowGreen = { fg = colors.green }, --[[fix]]
+    TSRainbowBlue = { fg = colors.blue }, --[[fix]]
+    TSRainbowViolet = { fg = colors.purple }, --[[fix]]
+    TSRainbowCyan = { fg = colors.aqua }, --[[fix]]
+    RainbowDelimiterRed = { fg = colors.red }, --[[fix]]
+    RainbowDelimiterOrange = { fg = colors.orange }, --[[fix]]
+    RainbowDelimiterYellow = { fg = colors.yellow }, --[[fix]]
+    RainbowDelimiterGreen = { fg = colors.green }, --[[fix]]
+    RainbowDelimiterBlue = { fg = colors.blue }, --[[fix]]
+    RainbowDelimiterViolet = { fg = colors.purple }, --[[fix]]
+    RainbowDelimiterCyan = { fg = colors.aqua }, --[[fix]]
+    DapBreakpointSymbol = { fg = colors.red, bg = colors.bg1 }, --[[fix]]
+    DapStoppedSymbol = { fg = colors.green, bg = colors.bg1 }, --[[fix]]
+    DapUIBreakpointsCurrentLine = { link = "AthensYellow" }, --[[fix]]
+    DapUIBreakpointsDisabledLine = { link = "AthensGray" }, --[[fix]]
+    DapUIBreakpointsInfo = { link = "AthensAqua" }, --[[fix]]
+    DapUIBreakpointsLine = { link = "AthensYellow" }, --[[fix]]
+    DapUIBreakpointsPath = { link = "AthensBlue" }, --[[fix]]
+    DapUICurrentFrameName = { link = "AthensPurple" }, --[[fix]]
+    DapUIDecoration = { link = "AthensPurple" }, --[[fix]]
+    DapUIEndofBuffer = { link = "EndOfBuffer" }, --[[fix]]
+    DapUIFloatBorder = { link = "AthensAqua" }, --[[fix]]
+    DapUILineNumber = { link = "AthensYellow" }, --[[fix]]
+    DapUIModifiedValue = { link = "AthensRed" }, --[[fix]]
+    DapUIPlayPause = { fg = colors.green, bg = colors.bg1 }, --[[fix]]
+    DapUIRestart = { fg = colors.green, bg = colors.bg1 }, --[[fix]]
+    DapUIScope = { link = "AthensBlue" }, --[[fix]]
+    DapUISource = { link = "AthensFg1" }, --[[fix]]
+    DapUIStepBack = { fg = colors.blue, bg = colors.bg1 }, --[[fix]]
+    DapUIStepInto = { fg = colors.blue, bg = colors.bg1 }, --[[fix]]
+    DapUIStepOut = { fg = colors.blue, bg = colors.bg1 }, --[[fix]]
+    DapUIStepOver = { fg = colors.blue, bg = colors.bg1 }, --[[fix]]
+    DapUIStop = { fg = colors.red, bg = colors.bg1 }, --[[fix]]
+    DapUIStoppedThread = { link = "AthensBlue" }, --[[fix]]
+    DapUIThread = { link = "AthensBlue" }, --[[fix]]
+    DapUIType = { link = "AthensOrange" }, --[[fix]]
+    DapUIUnavailable = { link = "AthensGray" }, --[[fix]]
+    DapUIWatchesEmpty = { link = "AthensGray" }, --[[fix]]
+    DapUIWatchesError = { link = "AthensRed" }, --[[fix]]
+    DapUIWatchesValue = { link = "AthensYellow" }, --[[fix]]
+    DapUIWinSelect = { link = "AthensYellow" }, --[[fix]]
+    NeogitDiffDelete = { link = "DiffDelete" }, --[[fix]]
+    NeogitDiffAdd = { link = "DiffAdd" }, --[[fix]]
+    NeogitHunkHeader = { link = "WinBar" }, --[[fix]]
+    NeogitHunkHeaderHighlight = { link = "WinBarNC" }, --[[fix]]
+    DiffviewStatusModified = { link = "AthensGreenBold" }, --[[fix]]
+    DiffviewFilePanelInsertions = { link = "AthensGreenBold" }, --[[fix]]
+    DiffviewFilePanelDeletions = { link = "AthensRedBold" }, --[[fix]]
+    MiniAnimateCursor = { reverse = true, nocombine = true }, --[[fix]]
+    MiniAnimateNormalFloat = { fg = colors.fg1, bg = colors.bg1 }, --[[fix]]
+    MiniClueBorder = { link = "FloatBorder" }, --[[fix]]
+    MiniClueDescGroup = { link = "DiagnosticFloatingWarn" }, --[[fix]]
+    MiniClueDescSingle = { link = "NormalFloat" }, --[[fix]]
+    MiniClueNextKey = { link = "DiagnosticFloatingHint" }, --[[fix]]
+    MiniClueNextKeyWithPostkeys = { link = "DiagnosticFloatingError" }, --[[fix]]
+    MiniClueSeparator = { link = "DiagnosticFloatingInfo" }, --[[fix]]
+    MiniClueTitle = { link = "FloatTitle" }, --[[fix]]
+    MiniCompletionActiveParameter = { underline = true }, --[[fix]]
+    MiniCursorword = { underline = true }, --[[fix]]
+    MiniCursorwordCurrent = { underline = true }, --[[fix]]
+    MiniDepsChangeAdded = { link = "AthensGreen" }, --[[fix]]
+    MiniDepsChangeRemoved = { link = "AthensRed" }, --[[fix]]
+    MiniDepsHint = { link = "DiagnosticHint" }, --[[fix]]
+    MiniDepsInfo = { link = "DiagnosticInfo" }, --[[fix]]
+    MiniDepsMsgBreaking = { link = "DiagnosticWarn" }, --[[fix]]
+    MiniDepsPlaceholder = { link = "Comment" }, --[[fix]]
+    MiniDepsTitle = { link = "Title" }, --[[fix]]
+    MiniDepsTitleError = { link = "DiffDelete" }, --[[fix]]
+    MiniDepsTitleSame = { link = "DiffChange" }, --[[fix]]
+    MiniDepsTitleUpdate = { link = "DiffAdd" }, --[[fix]]
+    MiniDiffOverAdd = { link = "DiffAdd" }, --[[fix]]
+    MiniDiffOverChange = { link = "DiffText" }, --[[fix]]
+    MiniDiffOverContext = { link = "DiffChange" }, --[[fix]]
+    MiniDiffOverDelete = { link = "DiffDelete" }, --[[fix]]
+    MiniDiffSignAdd = { link = "AthensGreen" }, --[[fix]]
+    MiniDiffSignChange = { link = "AthensAqua" }, --[[fix]]
+    MiniDiffSignDelete = { link = "AthensRed" }, --[[fix]]
+    MiniFilesBorder = { link = "FloatBorder" }, --[[fix]]
+    MiniFilesBorderModified = { link = "DiagnosticFloatingWarn" }, --[[fix]]
+    MiniFilesCursorLine = { bg = colors.bg2 }, --[[fix]]
+    MiniFilesDirectory = { link = "Directory" }, --[[fix]]
+    MiniFilesFile = { link = "AthensFg1" }, --[[fix]]
+    MiniFilesNormal = { link = "NormalFloat" }, --[[fix]]
+    MiniFilesTitle = { link = "FloatTitle" }, --[[fix]]
+    MiniFilesTitleFocused = { link = "AthensOrangeBold" }, --[[fix]]
+    MiniHipatternsFixme = { fg = colors.bg0, bg = colors.red, bold = config.bold }, --[[fix]]
+    MiniHipatternsHack = { fg = colors.bg0, bg = colors.yellow, bold = config.bold }, --[[fix]]
+    MiniHipatternsNote = { fg = colors.bg0, bg = colors.blue, bold = config.bold }, --[[fix]]
+    MiniHipatternsTodo = { fg = colors.bg0, bg = colors.aqua, bold = config.bold }, --[[fix]]
+    MiniIconsAzure = { link = "AthensBlue" }, --[[fix]]
+    MiniIconsBlue = { link = "AthensBlue" }, --[[fix]]
+    MiniIconsCyan = { link = "AthensAqua" }, --[[fix]]
+    MiniIconsGreen = { link = "AthensGreen" }, --[[fix]]
+    MiniIconsGrey = { link = "AthensFg0" }, --[[fix]]
+    MiniIconsOrange = { link = "AthensOrange" }, --[[fix]]
+    MiniIconsPurple = { link = "AthensPurple" }, --[[fix]]
+    MiniIconsRed = { link = "AthensRed" }, --[[fix]]
+    MiniIconsYellow = { link = "AthensYellow" }, --[[fix]]
+    MiniIndentscopeSymbol = { link = "AthensGray" }, --[[fix]]
+    MiniIndentscopeSymbolOff = { link = "AthensYellow" }, --[[fix]]
+    MiniJump = { link = "AthensOrangeUnderline" }, --[[fix]]
+    MiniJump2dDim = { link = "AthensGray" }, --[[fix]]
+    MiniJump2dSpot = { fg = colors.orange, bold = config.bold, nocombine = true }, --[[fix]]
+    MiniJump2dSpotAhead = { fg = colors.aqua, bg = colors.bg0, nocombine = true }, --[[fix]]
+    MiniJump2dSpotUnique = { fg = colors.yellow, bold = config.bold, nocombine = true }, --[[fix]]
+    MiniMapNormal = { link = "NormalFloat" }, --[[fix]]
+    MiniMapSymbolCount = { link = "Special" }, --[[fix]]
+    MiniMapSymbolLine = { link = "Title" }, --[[fix]]
+    MiniMapSymbolView = { link = "Delimiter" }, --[[fix]]
+    MiniNotifyBorder = { link = "FloatBorder" }, --[[fix]]
+    MiniNotifyNormal = { link = "NormalFloat" }, --[[fix]]
+    MiniNotifyTitle = { link = "FloatTitle" }, --[[fix]]
+    MiniOperatorsExchangeFrom = { link = "IncSearch" }, --[[fix]]
+    MiniPickBorder = { link = "FloatBorder" }, --[[fix]]
+    MiniPickBorderBusy = { link = "DiagnosticFloatingWarn" }, --[[fix]]
+    MiniPickBorderText = { link = "FloatTitle" }, --[[fix]]
+    MiniPickIconDirectory = { link = "Directory" }, --[[fix]]
+    MiniPickIconFile = { link = "MiniPickNormal" }, --[[fix]]
+    MiniPickHeader = { link = "DiagnosticFloatingHint" }, --[[fix]]
+    MiniPickMatchCurrent = { bg = colors.bg2 }, --[[fix]]
+    MiniPickMatchMarked = { link = "Visual" }, --[[fix]]
+    MiniPickMatchRanges = { link = "DiagnosticFloatingHint" }, --[[fix]]
+    MiniPickNormal = { link = "NormalFloat" }, --[[fix]]
+    MiniPickPreviewLine = { link = "CursorLine" }, --[[fix]]
+    MiniPickPreviewRegion = { link = "IncSearch" }, --[[fix]]
+    MiniPickPrompt = { link = "DiagnosticFloatingInfo" }, --[[fix]]
+    MiniStarterCurrent = { nocombine = true }, --[[fix]]
+    MiniStarterFooter = { link = "AthensGray" }, --[[fix]]
+    MiniStarterHeader = { link = "Title" }, --[[fix]]
+    MiniStarterInactive = { link = "Comment" }, --[[fix]]
+    MiniStarterItem = { link = "Normal" }, --[[fix]]
+    MiniStarterItemBullet = { link = "Delimiter" }, --[[fix]]
+    MiniStarterItemPrefix = { link = "WarningMsg" }, --[[fix]]
+    MiniStarterSection = { link = "Delimiter" }, --[[fix]]
+    MiniStarterQuery = { link = "MoreMsg" }, --[[fix]]
+    MiniStatuslineDevinfo = { link = "StatusLine" }, --[[fix]]
+    MiniStatuslineFileinfo = { link = "StatusLine" }, --[[fix]]
+    MiniStatuslineFilename = { link = "StatusLineNC" }, --[[fix]]
+    MiniStatuslineInactive = { link = "StatusLineNC" }, --[[fix]]
+    MiniStatuslineModeCommand = { fg = colors.bg0, bg = colors.yellow, bold = config.bold }, --[[fix]]
+    MiniStatuslineModeInsert = { fg = colors.bg0, bg = colors.blue, bold = config.bold }, --[[fix]]
+    MiniStatuslineModeNormal = { fg = colors.bg0, bg = colors.fg1, bold = config.bold }, --[[fix]]
+    MiniStatuslineModeOther = { fg = colors.bg0, bg = colors.aqua, bold = config.bold }, --[[fix]]
+    MiniStatuslineModeReplace = { fg = colors.bg0, bg = colors.red, bold = config.bold }, --[[fix]]
+    MiniStatuslineModeVisual = { fg = colors.bg0, bg = colors.green, bold = config.bold }, --[[fix]]
+    MiniSurround = { link = "IncSearch" }, --[[fix]]
+    MiniTablineCurrent = { fg = colors.green, bg = colors.bg1, bold = config.bold, reverse = config.invert_tabline }, --[[fix]]
+    MiniTablineFill = { link = "TabLineFill" }, --[[fix]]
+    MiniTablineHidden = { fg = colors.bg4, bg = colors.bg1, reverse = config.invert_tabline }, --[[fix]]
+    MiniTablineModifiedCurrent = { --[[fix]]
+      fg = colors.bg1, --[[fix]]
+      bg = colors.green, --[[fix]]
+      bold = config.bold, --[[fix]]
+      reverse = config.invert_tabline, --[[fix]]
+    }, --[[fix]]
+    MiniTablineModifiedHidden = { fg = colors.bg1, bg = colors.bg4, reverse = config.invert_tabline }, --[[fix]]
+    MiniTablineModifiedVisible = { fg = colors.bg1, bg = colors.fg1, reverse = config.invert_tabline }, --[[fix]]
+    MiniTablineTabpagesection = { link = "Search" }, --[[fix]]
+    MiniTablineVisible = { fg = colors.fg1, bg = colors.bg1, reverse = config.invert_tabline }, --[[fix]]
+    MiniTestEmphasis = { bold = config.bold }, --[[fix]]
+    MiniTestFail = { link = "AthensRedBold" }, --[[fix]]
+    MiniTestPass = { link = "AthensGreenBold" }, --[[fix]]
+    MiniTrailspace = { bg = colors.red }, --[[fix]]
+    ["@comment"] = { link = "Comment" }, --[[fix]]
+    ["@none"] = { bg = "NONE", fg = "NONE" }, --[[fix]]
+    ["@preproc"] = { link = "PreProc" }, --[[fix]]
+    ["@define"] = { link = "Define" }, --[[fix]]
+    ["@operator"] = { link = "Operator" }, --[[fix]]
+    ["@punctuation.delimiter"] = { link = "Delimiter" }, --[[fix]]
+    ["@punctuation.bracket"] = { link = "Delimiter" }, --[[fix]]
+    ["@punctuation.special"] = { link = "Delimiter" }, --[[fix]]
+    ["@string"] = { link = "String" }, --[[fix]]
+    ["@string.regex"] = { link = "String" }, --[[fix]]
+    ["@string.regexp"] = { link = "String" }, --[[fix]]
+    ["@string.escape"] = { link = "SpecialChar" }, --[[fix]]
+    ["@string.special"] = { link = "SpecialChar" }, --[[fix]]
+    ["@string.special.path"] = { link = "Underlined" }, --[[fix]]
+    ["@string.special.symbol"] = { link = "Identifier" }, --[[fix]]
+    ["@string.special.url"] = { link = "Underlined" }, --[[fix]]
+    ["@character"] = { link = "Character" }, --[[fix]]
+    ["@character.special"] = { link = "SpecialChar" }, --[[fix]]
+    ["@boolean"] = { link = "Boolean" }, --[[fix]]
+    ["@number"] = { link = "Number" }, --[[fix]]
+    ["@number.float"] = { link = "Float" }, --[[fix]]
+    ["@float"] = { link = "Float" }, --[[fix]]
+    ["@function"] = { link = "Function" }, --[[fix]]
+    ["@function.builtin"] = { link = "Special" }, --[[fix]]
+    ["@function.call"] = { link = "Function" }, --[[fix]]
+    ["@function.macro"] = { link = "Macro" }, --[[fix]]
+    ["@function.method"] = { link = "Function" }, --[[fix]]
+    ["@method"] = { link = "Function" }, --[[fix]]
+    ["@method.call"] = { link = "Function" }, --[[fix]]
+    ["@constructor"] = { link = "Special" }, --[[fix]]
+    ["@parameter"] = { link = "Identifier" }, --[[fix]]
+    ["@keyword"] = { link = "Keyword" }, --[[fix]]
+    ["@keyword.conditional"] = { link = "Conditional" }, --[[fix]]
+    ["@keyword.debug"] = { link = "Debug" }, --[[fix]]
+    ["@keyword.directive"] = { link = "PreProc" }, --[[fix]]
+    ["@keyword.directive.define"] = { link = "Define" }, --[[fix]]
+    ["@keyword.exception"] = { link = "Exception" }, --[[fix]]
+    ["@keyword.function"] = { link = "Keyword" }, --[[fix]]
+    ["@keyword.import"] = { link = "Include" }, --[[fix]]
+    ["@keyword.operator"] = { link = "AthensRed" }, --[[fix]]
+    ["@keyword.repeat"] = { link = "Repeat" }, --[[fix]]
+    ["@keyword.return"] = { link = "Keyword" }, --[[fix]]
+    ["@keyword.storage"] = { link = "StorageClass" }, --[[fix]]
+    ["@conditional"] = { link = "Conditional" }, --[[fix]]
+    ["@repeat"] = { link = "Repeat" }, --[[fix]]
+    ["@debug"] = { link = "Debug" }, --[[fix]]
+    ["@label"] = { link = "Label" }, --[[fix]]
+    ["@include"] = { link = "Include" }, --[[fix]]
+    ["@exception"] = { link = "Exception" }, --[[fix]]
+    ["@type"] = { link = "Type" }, --[[fix]]
+    ["@type.builtin"] = { link = "Type" }, --[[fix]]
+    ["@type.definition"] = { link = "Typedef" }, --[[fix]]
+    ["@type.qualifier"] = { link = "Type" }, --[[fix]]
+    ["@storageclass"] = { link = "StorageClass" }, --[[fix]]
+    ["@attribute"] = { link = "PreProc" }, --[[fix]]
+    ["@field"] = { link = "Identifier" }, --[[fix]]
+    ["@property"] = { link = "Identifier" }, --[[fix]]
+    ["@variable"] = { link = "AthensFg1" }, --[[fix]]
+    ["@variable.builtin"] = { link = "Special" }, --[[fix]]
+    ["@variable.member"] = { link = "Identifier" }, --[[fix]]
+    ["@variable.parameter"] = { link = "Identifier" }, --[[fix]]
+    ["@constant"] = { link = "Constant" }, --[[fix]]
+    ["@constant.builtin"] = { link = "Special" }, --[[fix]]
+    ["@constant.macro"] = { link = "Define" }, --[[fix]]
+    ["@markup"] = { link = "AthensFg1" }, --[[fix]]
+    ["@markup.strong"] = { bold = config.bold }, --[[fix]]
+    ["@markup.italic"] = { link = "@text.emphasis" }, --[[fix]]
+    ["@markup.underline"] = { underline = config.underline }, --[[fix]]
+    ["@markup.strikethrough"] = { strikethrough = config.strikethrough }, --[[fix]]
+    ["@markup.heading"] = { link = "Title" }, --[[fix]]
+    ["@markup.raw"] = { link = "String" }, --[[fix]]
+    ["@markup.math"] = { link = "Special" }, --[[fix]]
+    ["@markup.environment"] = { link = "Macro" }, --[[fix]]
+    ["@markup.environment.name"] = { link = "Type" }, --[[fix]]
+    ["@markup.link"] = { link = "Underlined" }, --[[fix]]
+    ["@markup.link.label"] = { link = "SpecialChar" }, --[[fix]]
+    ["@markup.list"] = { link = "Delimiter" }, --[[fix]]
+    ["@markup.list.checked"] = { link = "AthensGreen" }, --[[fix]]
+    ["@markup.list.unchecked"] = { link = "AthensGray" }, --[[fix]]
+    ["@comment.todo"] = { link = "Todo" }, --[[fix]]
+    ["@comment.note"] = { link = "SpecialComment" }, --[[fix]]
+    ["@comment.warning"] = { link = "WarningMsg" }, --[[fix]]
+    ["@comment.error"] = { link = "ErrorMsg" }, --[[fix]]
+    ["@diff.plus"] = { link = "diffAdded" }, --[[fix]]
+    ["@diff.minus"] = { link = "diffRemoved" }, --[[fix]]
+    ["@diff.delta"] = { link = "diffChanged" }, --[[fix]]
+    ["@module"] = { link = "AthensFg1" }, --[[fix]]
+    ["@namespace"] = { link = "AthensFg1" }, --[[fix]]
+    ["@symbol"] = { link = "Identifier" }, --[[fix]]
+    ["@text"] = { link = "AthensFg1" }, --[[fix]]
+    ["@text.strong"] = { bold = config.bold }, --[[fix]]
+    ["@text.emphasis"] = { italic = config.italic.emphasis }, --[[fix]]
+    ["@text.underline"] = { underline = config.underline }, --[[fix]]
+    ["@text.strike"] = { strikethrough = config.strikethrough }, --[[fix]]
+    ["@text.title"] = { link = "Title" }, --[[fix]]
+    ["@text.literal"] = { link = "String" }, --[[fix]]
+    ["@text.uri"] = { link = "Underlined" }, --[[fix]]
+    ["@text.math"] = { link = "Special" }, --[[fix]]
+    ["@text.environment"] = { link = "Macro" }, --[[fix]]
+    ["@text.environment.name"] = { link = "Type" }, --[[fix]]
+    ["@text.reference"] = { link = "Constant" }, --[[fix]]
+    ["@text.todo"] = { link = "Todo" }, --[[fix]]
+    ["@text.todo.checked"] = { link = "AthensGreen" }, --[[fix]]
+    ["@text.todo.unchecked"] = { link = "AthensGray" }, --[[fix]]
+    ["@text.note"] = { link = "SpecialComment" }, --[[fix]]
+    ["@text.note.comment"] = { fg = colors.purple, bold = config.bold }, --[[fix]]
+    ["@text.warning"] = { link = "WarningMsg" }, --[[fix]]
+    ["@text.danger"] = { link = "ErrorMsg" }, --[[fix]]
+    ["@text.danger.comment"] = { fg = colors.fg0, bg = colors.red, bold = config.bold }, --[[fix]]
+    ["@text.diff.add"] = { link = "diffAdded" }, --[[fix]]
+    ["@text.diff.delete"] = { link = "diffRemoved" }, --[[fix]]
+    ["@tag"] = { link = "Tag" }, --[[fix]]
+    ["@tag.attribute"] = { link = "Identifier" }, --[[fix]]
+    ["@tag.delimiter"] = { link = "Delimiter" }, --[[fix]]
+    ["@punctuation"] = { link = "Delimiter" }, --[[fix]]
+    ["@macro"] = { link = "Macro" }, --[[fix]]
+    ["@structure"] = { link = "Structure" }, --[[fix]]
+    ["@lsp.type.class"] = { link = "@type" }, --[[fix]]
+    ["@lsp.type.comment"] = { link = "@comment" }, --[[fix]]
+    ["@lsp.type.decorator"] = { link = "@macro" }, --[[fix]]
+    ["@lsp.type.enum"] = { link = "@type" }, --[[fix]]
+    ["@lsp.type.enumMember"] = { link = "@constant" }, --[[fix]]
+    ["@lsp.type.function"] = { link = "@function" }, --[[fix]]
+    ["@lsp.type.interface"] = { link = "@constructor" }, --[[fix]]
+    ["@lsp.type.macro"] = { link = "@macro" }, --[[fix]]
+    ["@lsp.type.method"] = { link = "@method" }, --[[fix]]
+    ["@lsp.type.namespace"] = { link = "@namespace" }, --[[fix]]
+    ["@lsp.type.parameter"] = { link = "@parameter" }, --[[fix]]
+    ["@lsp.type.property"] = { link = "@property" }, --[[fix]]
+    ["@lsp.type.struct"] = { link = "@type" }, --[[fix]]
+    ["@lsp.type.type"] = { link = "@type" }, --[[fix]]
+    ["@lsp.type.typeParameter"] = { link = "@type.definition" }, --[[fix]]
+    ["@lsp.type.variable"] = { link = "@variable" }, --[[fix]]
   }
 
   for group, hl in pairs(config.overrides) do
