@@ -161,16 +161,50 @@ local function get_colors()
 
   local color_groups = {
     dark = {
-      bg0 = p.dark0, --[[fix]]
-      bg1 = p.dark1, --[[fix]]
-      bg2 = p.dark2, --[[fix]]
-      bg3 = p.dark3, --[[fix]]
-      bg4 = p.dark4, --[[fix]]
-      fg0 = p.light0, --[[fix]]
-      fg1 = p.light1, --[[fix]]
-      fg2 = p.light2, --[[fix]]
-      fg3 = p.light3, --[[fix]]
-      fg4 = p.light4, --[[fix]]
+      bg0 = p.bg0,
+      bg1 = p.bg1,
+      bg2 = p.bg2,
+      bg3 = p.bg3,
+      bg4 = p.bg4,
+      fg0 = p.fg1,
+      fg1 = p.fg1,
+      fg2 = p.fg2,
+      fg3 = p.fg3,
+      fg4 = p.fg4,
+
+      cursor = p.cursor,
+      modeline = p.modeline,
+      active1 = p.active1,
+      active2 = p.active2,
+      inactive1 = p.inactive1,
+      inactive2 = p.inactive2,
+      clock12 = p.clock12,
+      clock01 = p.clock01,
+      clock02 = p.clock02,
+      clock03 = p.clock03,
+      clock04 = p.clock04,
+      clock05 = p.clock05,
+      clock06 = p.clock06,
+      clock07 = p.clock07,
+      clock08 = p.clock08,
+      clock09 = p.clock09,
+      clock10 = p.clock10,
+      clock11 = p.clock11,
+      hi1 = p.hi1,
+      hi2 = p.hi2,
+      err = p.err,
+      warning = p.warning,
+      success = p.success,
+      var = p.var,
+      func = p.func,
+      builtin = p.builtin,
+      keyword = p.keyword,
+      const = p.const,
+      comment = p.comment,
+      str = p.str,
+      ltype = p.ltype,
+      preprocessor = p.preprocessor,
+
       red = p.bright_red, --[[fix]]
       green = p.bright_green, --[[fix]]
       yellow = p.bright_yellow, --[[fix]]
@@ -190,16 +224,50 @@ local function get_colors()
       gray = p.gray, --[[fix]]
     },
     light = {
-      bg0 = p.light0, --[[fix]]
-      bg1 = p.light1, --[[fix]]
-      bg2 = p.light2, --[[fix]]
-      bg3 = p.light3, --[[fix]]
-      bg4 = p.light4, --[[fix]]
-      fg0 = p.dark0, --[[fix]]
-      fg1 = p.dark1, --[[fix]]
-      fg2 = p.dark2, --[[fix]]
-      fg3 = p.dark3, --[[fix]]
-      fg4 = p.dark4, --[[fix]]
+      bg0 = p.bg0,
+      bg1 = p.bg1,
+      bg2 = p.bg2,
+      bg3 = p.bg3,
+      bg4 = p.bg4,
+      fg0 = p.fg0,
+      fg1 = p.fg1,
+      fg2 = p.fg2,
+      fg3 = p.fg3,
+      fg4 = p.fg4,
+
+      cursor = p.cursor,
+      modeline = p.modeline,
+      active1 = p.active1,
+      active2 = p.active2,
+      inactive1 = p.inactive1,
+      inactive2 = p.inactive2,
+      clock12 = p.clock12,
+      clock01 = p.clock01,
+      clock02 = p.clock02,
+      clock03 = p.clock03,
+      clock04 = p.clock04,
+      clock05 = p.clock05,
+      clock06 = p.clock06,
+      clock07 = p.clock07,
+      clock08 = p.clock08,
+      clock09 = p.clock09,
+      clock10 = p.clock10,
+      clock11 = p.clock11,
+      hi1 = p.hi1,
+      hi2 = p.hi2,
+      err = p.err,
+      warning = p.warning,
+      success = p.success,
+      var = p.var,
+      func = p.func,
+      builtin = p.builtin,
+      keyword = p.keyword,
+      const = p.const,
+      comment = p.comment,
+      str = p.str,
+      ltype = p.ltype,
+      preprocessor = p.preprocessor,
+
       red = p.faded_red, --[[fix]]
       green = p.faded_green, --[[fix]]
       yellow = p.faded_yellow, --[[fix]]
@@ -252,17 +320,24 @@ local function get_groups()
   end
 
   local groups = {
+    AthensPreProcessor = { fg = colors.preprocessor },
+    AthensConstant = { fg = colors.const },
+    AthensError = { fg = colors.err },
+    AthensFunction = { fg = colors.func },
+    AthensKeyword = { fg = colors.keyword },
+    AthensText = { fg = colors.fg1 },
+    AthensType = { fg = colors.ltype },
     AthensFg0 = { fg = colors.fg0 }, --[[fix]]
-    AthensFg1 = { fg = colors.fg1 }, --[[fix]]
-    AthensFg2 = { fg = colors.fg2 }, --[[fix]]
-    AthensFg3 = { fg = colors.fg3 }, --[[fix]]
-    AthensFg4 = { fg = colors.fg4 }, --[[fix]]
+    AthensFg1 = { fg = colors.fg1 },
+    AthensFg2 = { fg = colors.fg2 },
+    AthensFg3 = { fg = colors.fg3 },
+    AthensFg4 = { fg = colors.fg4 },
     AthensGray = { fg = colors.gray }, --[[fix]]
-    AthensBg0 = { fg = colors.bg0 }, --[[fix]]
-    AthensBg1 = { fg = colors.bg1 }, --[[fix]]
-    AthensBg2 = { fg = colors.bg2 }, --[[fix]]
-    AthensBg3 = { fg = colors.bg3 }, --[[fix]]
-    AthensBg4 = { fg = colors.bg4 }, --[[fix]]
+    AthensBg0 = { fg = colors.bg0 },
+    AthensBg1 = { fg = colors.bg1 },
+    AthensBg2 = { fg = colors.bg2 },
+    AthensBg3 = { fg = colors.bg3 },
+    AthensBg4 = { fg = colors.bg4 },
     AthensRed = { fg = colors.red }, --[[fix]]
     AthensRedBold = { fg = colors.red, bold = config.bold }, --[[fix]]
     AthensGreen = { fg = colors.green }, --[[fix]]
@@ -341,34 +416,34 @@ local function get_groups()
     iCursor = { link = "Cursor" }, --[[fix]]
     lCursor = { link = "Cursor" }, --[[fix]]
     Special = { link = "AthensOrange" }, --[[fix]]
-    Comment = { fg = colors.gray, italic = config.italic.comments }, --[[fix]]
+    Comment = { fg = colors.comment, italic = config.italic.comments },
     Todo = { fg = colors.bg0, bg = colors.yellow, bold = config.bold, italic = config.italic.comments }, --[[fix]]
     Done = { fg = colors.orange, bold = config.bold, italic = config.italic.comments }, --[[fix]]
-    Error = { fg = colors.red, bold = config.bold, reverse = config.inverse }, --[[fix]]
+    Error = { fg = colors.err, bold = config.bold, reverse = config.inverse },
     Statement = { link = "AthensRed" }, --[[fix]]
-    Conditional = { link = "AthensRed" }, --[[fix]]
+    Conditional = { link = "AthensKeyword" },
     Repeat = { link = "AthensRed" }, --[[fix]]
     Label = { link = "AthensRed" }, --[[fix]]
-    Exception = { link = "AthensRed" }, --[[fix]]
-    Operator = { fg = colors.orange, italic = config.italic.operators }, --[[fix]]
-    Keyword = { link = "AthensRed" }, --[[fix]]
-    Identifier = { link = "AthensBlue" }, --[[fix]]
-    Function = { link = "AthensGreenBold" }, --[[fix]]
-    PreProc = { link = "AthensAqua" }, --[[fix]]
-    Include = { link = "AthensAqua" }, --[[fix]]
-    Define = { link = "AthensAqua" }, --[[fix]]
-    Macro = { link = "AthensAqua" }, --[[fix]]
-    PreCondit = { link = "AthensAqua" }, --[[fix]]
-    Constant = { link = "AthensPurple" }, --[[fix]]
-    Character = { link = "AthensPurple" }, --[[fix]]
-    String = { fg = colors.green, italic = config.italic.strings }, --[[fix]]
-    Boolean = { link = "AthensPurple" }, --[[fix]]
-    Number = { link = "AthensPurple" }, --[[fix]]
-    Float = { link = "AthensPurple" }, --[[fix]]
-    Type = { link = "AthensYellow" }, --[[fix]]
-    StorageClass = { link = "AthensOrange" }, --[[fix]]
-    Structure = { link = "AthensAqua" }, --[[fix]]
-    Typedef = { link = "AthensYellow" }, --[[fix]]
+    Exception = { link = "AthensError" },
+    Operator = { fg = colors.fg1, italic = config.italic.operators }, --[[fix]]
+    Keyword = { link = "AthensKeyword" },
+    Identifier = { link = "AthensRed" }, --[[fix]]
+    Function = { link = "AthensFunction" },
+    PreProc = { link = "AthensPreProcessor" },
+    Include = { link = "AthensPreProcessor" },
+    Define = { link = "AthensPreProcessor" },
+    Macro = { link = "AthensPreProcessor" },
+    PreCondit = { link = "AthensPreProcessor" },
+    Constant = { link = "AthensConstant" },
+    Character = { link = "AthensText" },
+    String = { fg = colors.str, italic = config.italic.strings },
+    Boolean = { link = "AthensText" },
+    Number = { link = "AthensText" },
+    Float = { link = "AthensText" },
+    Type = { link = "AthensType" },
+    StorageClass = { link = "AthensKeyword" },
+    Structure = { link = "AthensKeyword" },
+    Typedef = { link = "AthensKeyword" },
     Pmenu = { fg = colors.fg1, bg = colors.bg2 }, --[[fix]]
     PmenuSel = { fg = colors.bg2, bg = colors.blue, bold = config.bold }, --[[fix]]
     PmenuSbar = { bg = colors.bg2 }, --[[fix]]
@@ -382,7 +457,7 @@ local function get_groups()
     SpellLocal = { link = "AthensAquaUnderline" }, --[[fix]]
     SpellRare = { link = "AthensPurpleUnderline" }, --[[fix]]
     Whitespace = { fg = colors.bg2 }, --[[fix]]
-    Delimiter = { link = "AthensOrange" }, --[[fix]]
+    Delimiter = { link = "AthensText" },
     EndOfBuffer = { link = "NonText" }, --[[fix]]
     DiagnosticError = { link = "AthensRed" }, --[[fix]]
     DiagnosticSignError = { link = "AthensRedSign" }, --[[fix]]
@@ -629,13 +704,13 @@ local function get_groups()
     clojureDeref = { link = "AthensYellow" }, --[[fix]]
     clojureQuote = { link = "AthensYellow" }, --[[fix]]
     clojureUnquote = { link = "AthensYellow" }, --[[fix]]
-    cOperator = { link = "AthensPurple" }, --[[fix]]
-    cppOperator = { link = "AthensPurple" }, --[[fix]]
-    cStructure = { link = "AthensOrange" }, --[[fix]]
+    cOperator = { link = "AthensKeyword" },
+    cppOperator = { link = "AthensKeyword" },
+    cStructure = { link = "AthensKeyword" },
     pythonBuiltin = { link = "AthensOrange" }, --[[fix]]
     pythonBuiltinObj = { link = "AthensOrange" }, --[[fix]]
     pythonBuiltinFunc = { link = "AthensOrange" }, --[[fix]]
-    pythonFunction = { link = "AthensAqua" }, --[[fix]]
+    pythonFunction = { link = "AthensFunction" },
     pythonDecorator = { link = "AthensRed" }, --[[fix]]
     pythonInclude = { link = "AthensBlue" }, --[[fix]]
     pythonImport = { link = "AthensBlue" }, --[[fix]]
@@ -650,7 +725,7 @@ local function get_groups()
     pythonRepeat = { link = "AthensRed" }, --[[fix]]
     pythonDottedName = { link = "AthensGreenBold" }, --[[fix]]
     cssBraces = { link = "AthensBlue" }, --[[fix]]
-    cssFunctionName = { link = "AthensYellow" }, --[[fix]]
+    cssFunctionName = { link = "AthensFunction" },
     cssIdentifier = { link = "AthensOrange" }, --[[fix]]
     cssClassName = { link = "AthensGreen" }, --[[fix]]
     cssColor = { link = "AthensBlue" }, --[[fix]]
@@ -680,7 +755,7 @@ local function get_groups()
     cssColorProp = { link = "AthensAqua" }, --[[fix]]
     cssGeneratedContentProp = { link = "AthensAqua" }, --[[fix]]
     javaScriptBraces = { link = "AthensFg1" }, --[[fix]]
-    javaScriptFunction = { link = "AthensAqua" }, --[[fix]]
+    javaScriptFunction = { link = "AthensFunction" },
     javaScriptIdentifier = { link = "AthensRed" }, --[[fix]]
     javaScriptMember = { link = "AthensBlue" }, --[[fix]]
     javaScriptNumber = { link = "AthensPurple" }, --[[fix]]
@@ -704,21 +779,6 @@ local function get_groups()
     typescriptHtmlElemProperties = { link = "AthensFg1" }, --[[fix]]
     typescriptNull = { link = "AthensPurple" }, --[[fix]]
     typescriptInterpolationDelimiter = { link = "AthensAqua" }, --[[fix]]
-    purescriptModuleKeyword = { link = "AthensAqua" }, --[[fix]]
-    purescriptModuleName = { link = "AthensFg1" }, --[[fix]]
-    purescriptWhere = { link = "AthensAqua" }, --[[fix]]
-    purescriptDelimiter = { link = "AthensFg4" }, --[[fix]]
-    purescriptType = { link = "AthensFg1" }, --[[fix]]
-    purescriptImportKeyword = { link = "AthensAqua" }, --[[fix]]
-    purescriptHidingKeyword = { link = "AthensAqua" }, --[[fix]]
-    purescriptAsKeyword = { link = "AthensAqua" }, --[[fix]]
-    purescriptStructure = { link = "AthensAqua" }, --[[fix]]
-    purescriptOperator = { link = "AthensBlue" }, --[[fix]]
-    purescriptTypeVar = { link = "AthensFg1" }, --[[fix]]
-    purescriptConstructor = { link = "AthensFg1" }, --[[fix]]
-    purescriptFunction = { link = "AthensFg1" }, --[[fix]]
-    purescriptConditional = { link = "AthensOrange" }, --[[fix]]
-    purescriptBacktick = { link = "AthensOrange" }, --[[fix]]
     coffeeExtendedOp = { link = "AthensFg3" }, --[[fix]]
     coffeeSpecialOp = { link = "AthensFg3" }, --[[fix]]
     coffeeCurly = { link = "AthensOrange" }, --[[fix]]
@@ -735,11 +795,11 @@ local function get_groups()
     goDeclType = { link = "AthensBlue" }, --[[fix]]
     goBuiltins = { link = "AthensOrange" }, --[[fix]]
     luaIn = { link = "AthensRed" }, --[[fix]]
-    luaFunction = { link = "AthensAqua" }, --[[fix]]
+    luaFunction = { link = "AthensFunction" },
     luaTable = { link = "AthensOrange" }, --[[fix]]
     moonSpecialOp = { link = "AthensFg3" }, --[[fix]]
     moonExtendedOp = { link = "AthensFg3" }, --[[fix]]
-    moonFunction = { link = "AthensFg3" }, --[[fix]]
+    moonFunction = { link = "AthensFunction" },
     moonObject = { link = "AthensYellow" }, --[[fix]]
     javaAnnotation = { link = "AthensBlue" }, --[[fix]]
     javaDocTags = { link = "AthensAqua" }, --[[fix]]
@@ -756,18 +816,6 @@ local function get_groups()
     elixirStringDelimiter = { link = "AthensGreen" }, --[[fix]]
     elixirInterpolationDelimiter = { link = "AthensAqua" }, --[[fix]]
     elixirModuleDeclaration = { link = "AthensYellow" }, --[[fix]]
-    scalaNameDefinition = { link = "AthensFg1" }, --[[fix]]
-    scalaCaseFollowing = { link = "AthensFg1" }, --[[fix]]
-    scalaCapitalWord = { link = "AthensFg1" }, --[[fix]]
-    scalaTypeExtension = { link = "AthensFg1" }, --[[fix]]
-    scalaKeyword = { link = "AthensRed" }, --[[fix]]
-    scalaKeywordModifier = { link = "AthensRed" }, --[[fix]]
-    scalaSpecial = { link = "AthensAqua" }, --[[fix]]
-    scalaOperator = { link = "AthensFg1" }, --[[fix]]
-    scalaTypeDeclaration = { link = "AthensYellow" }, --[[fix]]
-    scalaTypeTypePostDeclaration = { link = "AthensYellow" }, --[[fix]]
-    scalaInstanceDeclaration = { link = "AthensFg1" }, --[[fix]]
-    scalaInterpolation = { link = "AthensAqua" }, --[[fix]]
     markdownItalic = { fg = colors.fg3, italic = true },
     markdownBold = { fg = colors.fg3, bold = config.bold },
     markdownBoldItalic = { fg = colors.fg3, bold = config.bold, italic = true },
@@ -1091,10 +1139,10 @@ local function get_groups()
     ["@punctuation.delimiter"] = { link = "Delimiter" }, --[[fix]]
     ["@punctuation.bracket"] = { link = "Delimiter" }, --[[fix]]
     ["@punctuation.special"] = { link = "Delimiter" }, --[[fix]]
-    ["@string"] = { link = "String" }, --[[fix]]
-    ["@string.regex"] = { link = "String" }, --[[fix]]
-    ["@string.regexp"] = { link = "String" }, --[[fix]]
-    ["@string.escape"] = { link = "SpecialChar" }, --[[fix]]
+    ["@string"] = { link = "String" },
+    ["@string.regex"] = { link = "String" },
+    ["@string.regexp"] = { link = "String" },
+    ["@string.escape"] = { link = "String" },
     ["@string.special"] = { link = "SpecialChar" }, --[[fix]]
     ["@string.special.path"] = { link = "Underlined" }, --[[fix]]
     ["@string.special.symbol"] = { link = "Identifier" }, --[[fix]]
@@ -1107,24 +1155,24 @@ local function get_groups()
     ["@float"] = { link = "Float" }, --[[fix]]
     ["@function"] = { link = "Function" }, --[[fix]]
     ["@function.builtin"] = { link = "Special" }, --[[fix]]
-    ["@function.call"] = { link = "Function" }, --[[fix]]
+    ["@function.call"] = { link = "AthensText" },
     ["@function.macro"] = { link = "Macro" }, --[[fix]]
     ["@function.method"] = { link = "Function" }, --[[fix]]
     ["@method"] = { link = "Function" }, --[[fix]]
-    ["@method.call"] = { link = "Function" }, --[[fix]]
+    ["@method.call"] = { link = "AthensText" },
     ["@constructor"] = { link = "Special" }, --[[fix]]
     ["@parameter"] = { link = "Identifier" }, --[[fix]]
-    ["@keyword"] = { link = "Keyword" }, --[[fix]]
+    ["@keyword"] = { link = "AthensKeyword" }, --[[fix]]
     ["@keyword.conditional"] = { link = "Conditional" }, --[[fix]]
     ["@keyword.debug"] = { link = "Debug" }, --[[fix]]
     ["@keyword.directive"] = { link = "PreProc" }, --[[fix]]
     ["@keyword.directive.define"] = { link = "Define" }, --[[fix]]
     ["@keyword.exception"] = { link = "Exception" }, --[[fix]]
-    ["@keyword.function"] = { link = "Keyword" }, --[[fix]]
+    ["@keyword.function"] = { link = "AthensKeyword" }, --[[fix]]
     ["@keyword.import"] = { link = "Include" }, --[[fix]]
-    ["@keyword.operator"] = { link = "AthensRed" }, --[[fix]]
-    ["@keyword.repeat"] = { link = "Repeat" }, --[[fix]]
-    ["@keyword.return"] = { link = "Keyword" }, --[[fix]]
+    ["@keyword.operator"] = { link = "AthensKeyword" },
+    ["@keyword.repeat"] = { link = "AthensKeyword" },
+    ["@keyword.return"] = { link = "AthensKeyword" },
     ["@keyword.storage"] = { link = "StorageClass" }, --[[fix]]
     ["@conditional"] = { link = "Conditional" }, --[[fix]]
     ["@repeat"] = { link = "Repeat" }, --[[fix]]
@@ -1139,13 +1187,13 @@ local function get_groups()
     ["@storageclass"] = { link = "StorageClass" }, --[[fix]]
     ["@attribute"] = { link = "PreProc" }, --[[fix]]
     ["@field"] = { link = "Identifier" }, --[[fix]]
-    ["@property"] = { link = "Identifier" }, --[[fix]]
+    ["@property"] = { link = "AthensText" },
     ["@variable"] = { link = "AthensFg1" }, --[[fix]]
     ["@variable.builtin"] = { link = "Special" }, --[[fix]]
     ["@variable.member"] = { link = "Identifier" }, --[[fix]]
     ["@variable.parameter"] = { link = "Identifier" }, --[[fix]]
     ["@constant"] = { link = "Constant" }, --[[fix]]
-    ["@constant.builtin"] = { link = "Special" }, --[[fix]]
+    ["@constant.builtin"] = { link = "AthensConstant" },
     ["@constant.macro"] = { link = "Define" }, --[[fix]]
     ["@markup"] = { link = "AthensFg1" }, --[[fix]]
     ["@markup.strong"] = { bold = config.bold }, --[[fix]]
