@@ -94,6 +94,21 @@ Athens.palette = {
       clock09 = "#d86aa7",
       clock10 = "#dc6e79",
       clock11 = "#bf8259",
+      bright_clock12 = "#ab8d00",
+      bright_clock01 = "#849900",
+      bright_clock02 = "#13a700",
+      bright_clock03 = "#00a37c",
+      bright_clock04 = "#00a09b",
+      bright_clock05 = "#009db8",
+      bright_clock06 = "#0095ef",
+      bright_clock07 = "#a773ff",
+      bright_clock08 = "#fb00fd",
+      bright_clock09 = "#fe3ab6",
+      bright_clock10 = "#fe4e68",
+      bright_clock11 = "#d37900",
+      dark_clock02 = "#0b7c00", --[[hsl=127, 100, 45]]
+      dark_clock05 = "#007589", --[[hsl=217, 100, 45]]
+      dark_clock10 = "#d5003b", --[[hsl= 71, 100, 45]]
       hi1 = "#b0b037",
       hi2 = "#3bbdac",
       err = "#c8575c",  --[[was error]]
@@ -108,44 +123,6 @@ Athens.palette = {
       str = "#6e9976",
       ltype = "#a28c6d", --[[ was type ]]
       preprocessor = "#5d9a91",
-  dark0 = "#282828", --[[fix]]
-  dark1 = "#3c3836", --[[fix]]
-  dark2 = "#504945", --[[fix]]
-  dark3 = "#665c54", --[[fix]]
-  dark4 = "#7c6f64", --[[fix]]
-  light0 = "#fbf1c7", --[[fix]]
-  light1 = "#ebdbb2", --[[fix]]
-  light2 = "#d5c4a1", --[[fix]]
-  light3 = "#bdae93", --[[fix]]
-  light4 = "#a89984", --[[fix]]
-  bright_red = "#fb4934", --[[fix]]
-  bright_green = "#b8bb26", --[[fix]]
-  bright_yellow = "#fabd2f", --[[fix]]
-  bright_blue = "#83a598", --[[fix]]
-  bright_purple = "#d3869b", --[[fix]]
-  bright_aqua = "#8ec07c", --[[fix]]
-  bright_orange = "#fe8019", --[[fix]]
-  neutral_red = "#cc241d", --[[fix]]
-  neutral_green = "#98971a", --[[fix]]
-  neutral_yellow = "#d79921", --[[fix]]
-  neutral_blue = "#458588", --[[fix]]
-  neutral_purple = "#b16286", --[[fix]]
-  neutral_aqua = "#689d6a", --[[fix]]
-  neutral_orange = "#d65d0e", --[[fix]]
-  faded_red = "#9d0006", --[[fix]]
-  faded_green = "#79740e", --[[fix]]
-  faded_yellow = "#b57614", --[[fix]]
-  faded_blue = "#076678", --[[fix]]
-  faded_purple = "#8f3f71", --[[fix]]
-  faded_aqua = "#427b58", --[[fix]]
-  faded_orange = "#af3a03", --[[fix]]
-  dark_red = "#722529", --[[fix]]
-  light_red = "#fc9487", --[[fix]]
-  dark_green = "#62693e", --[[fix]]
-  light_green = "#d5d39b", --[[fix]]
-  dark_aqua = "#49503b", --[[fix]]
-  light_aqua = "#e8e5b5", --[[fix]]
-  gray = "#928374", --[[fix]]
 }
 
 -- get a hex list of athens colors based on current bg and constrast config
@@ -172,24 +149,14 @@ local function get_colors()
       fg3 = p.fg3,
       fg4 = p.fg4,
 
+      fake = "#ff00ff",
+
       cursor = p.cursor,
       modeline = p.modeline,
       active1 = p.active1,
       active2 = p.active2,
       inactive1 = p.inactive1,
       inactive2 = p.inactive2,
-      clock12 = p.clock12,
-      clock01 = p.clock01,
-      clock02 = p.clock02,
-      clock03 = p.clock03,
-      clock04 = p.clock04,
-      clock05 = p.clock05,
-      clock06 = p.clock06,
-      clock07 = p.clock07,
-      clock08 = p.clock08,
-      clock09 = p.clock09,
-      clock10 = p.clock10,
-      clock11 = p.clock11,
       hi1 = p.hi1,
       hi2 = p.hi2,
       err = p.err,
@@ -205,23 +172,24 @@ local function get_colors()
       ltype = p.ltype,
       preprocessor = p.preprocessor,
 
-      red = p.bright_red, --[[fix]]
-      green = p.bright_green, --[[fix]]
-      yellow = p.bright_yellow, --[[fix]]
-      blue = p.bright_blue, --[[fix]]
-      purple = p.bright_purple, --[[fix]]
-      aqua = p.bright_aqua, --[[fix]]
-      orange = p.bright_orange, --[[fix]]
-      neutral_red = p.neutral_red, --[[fix]]
-      neutral_green = p.neutral_green, --[[fix]]
-      neutral_yellow = p.neutral_yellow, --[[fix]]
-      neutral_blue = p.neutral_blue, --[[fix]]
-      neutral_purple = p.neutral_purple, --[[fix]]
-      neutral_aqua = p.neutral_aqua, --[[fix]]
-      dark_red = p.dark_red, --[[fix]]
-      dark_green = p.dark_green, --[[fix]]
-      dark_aqua = p.dark_aqua, --[[fix]]
-      gray = p.gray, --[[fix]]
+      red = p.bright_clock10,
+      green = p.bright_clock02,
+      yellow = p.bright_clock12,
+      blue = p.bright_clock06,
+      purple = p.bright_clock07,
+      aqua = p.bright_clock05,
+      orange = p.bright_clock11,
+      neutral_red = p.clock10,
+      neutral_green = p.clock02,
+      neutral_yellow = p.clock12,
+      neutral_blue = p.clock06,
+      neutral_purple = p.clock07,
+      neutral_aqua = p.clock05,
+      neutral_orange = p.clock11,
+      dark_red = p.dark_clock10,
+      dark_green = p.dark_clock02,
+      dark_aqua = p.dark_clock05,
+      gray = p.fg1,
     },
     light = {
       bg0 = p.bg0,
@@ -229,11 +197,13 @@ local function get_colors()
       bg2 = p.bg2,
       bg3 = p.bg3,
       bg4 = p.bg4,
-      fg0 = p.fg0,
+      fg0 = p.fg1,
       fg1 = p.fg1,
       fg2 = p.fg2,
       fg3 = p.fg3,
       fg4 = p.fg4,
+
+      fake = "#ff00ff",
 
       cursor = p.cursor,
       modeline = p.modeline,
@@ -241,18 +211,6 @@ local function get_colors()
       active2 = p.active2,
       inactive1 = p.inactive1,
       inactive2 = p.inactive2,
-      clock12 = p.clock12,
-      clock01 = p.clock01,
-      clock02 = p.clock02,
-      clock03 = p.clock03,
-      clock04 = p.clock04,
-      clock05 = p.clock05,
-      clock06 = p.clock06,
-      clock07 = p.clock07,
-      clock08 = p.clock08,
-      clock09 = p.clock09,
-      clock10 = p.clock10,
-      clock11 = p.clock11,
       hi1 = p.hi1,
       hi2 = p.hi2,
       err = p.err,
@@ -268,23 +226,24 @@ local function get_colors()
       ltype = p.ltype,
       preprocessor = p.preprocessor,
 
-      red = p.faded_red, --[[fix]]
-      green = p.faded_green, --[[fix]]
-      yellow = p.faded_yellow, --[[fix]]
-      blue = p.faded_blue, --[[fix]]
-      purple = p.faded_purple, --[[fix]]
-      aqua = p.faded_aqua, --[[fix]]
-      orange = p.faded_orange, --[[fix]]
-      neutral_red = p.neutral_red, --[[fix]]
-      neutral_green = p.neutral_green, --[[fix]]
-      neutral_yellow = p.neutral_yellow, --[[fix]]
-      neutral_blue = p.neutral_blue, --[[fix]]
-      neutral_purple = p.neutral_purple, --[[fix]]
-      neutral_aqua = p.neutral_aqua, --[[fix]]
-      dark_red = p.light_red, --[[fix]]
-      dark_green = p.light_green, --[[fix]]
-      dark_aqua = p.light_aqua, --[[fix]]
-      gray = p.gray, --[[fix]]
+      red = p.bright_clock10,
+      green = p.bright_clock02,
+      yellow = p.bright_clock12,
+      blue = p.bright_clock06,
+      purple = p.bright_clock07,
+      aqua = p.bright_clock05,
+      orange = p.bright_clock11,
+      neutral_red = p.clock10,
+      neutral_green = p.clock02,
+      neutral_yellow = p.clock12,
+      neutral_blue = p.clock06,
+      neutral_purple = p.clock07,
+      neutral_aqua = p.clock05,
+      neutral_orange = p.clock11,
+      dark_red = p.dark_clock10,
+      dark_green = p.dark_clock02,
+      dark_aqua = p.dark_clock05,
+      gray = p.fg1,
     },
   }
 
@@ -297,22 +256,22 @@ local function get_groups()
 
   if config.terminal_colors then
     local term_colors = {
-      colors.bg0, --[[fix]]
-      colors.neutral_red, --[[fix]]
-      colors.neutral_green, --[[fix]]
-      colors.neutral_yellow, --[[fix]]
-      colors.neutral_blue, --[[fix]]
-      colors.neutral_purple, --[[fix]]
-      colors.neutral_aqua, --[[fix]]
-      colors.fg4, --[[fix]]
-      colors.gray, --[[fix]]
-      colors.red, --[[fix]]
-      colors.green, --[[fix]]
-      colors.yellow, --[[fix]]
-      colors.blue, --[[fix]]
-      colors.purple, --[[fix]]
-      colors.aqua, --[[fix]]
-      colors.fg1, --[[fix]]
+      colors.bg0,
+      colors.neutral_red,
+      colors.neutral_green,
+      colors.neutral_yellow,
+      colors.neutral_blue,
+      colors.neutral_purple,
+      colors.neutral_aqua,
+      colors.fg4,
+      colors.gray,
+      colors.red,
+      colors.green,
+      colors.yellow,
+      colors.blue,
+      colors.purple,
+      colors.aqua,
+      colors.fg1,
     }
     for index, value in ipairs(term_colors) do
       vim.g["terminal_color_" .. index - 1] = value
@@ -320,13 +279,15 @@ local function get_groups()
   end
 
   local groups = {
-    AthensPreProcessor = { fg = colors.preprocessor },
+    AthensCursor = { fg = colors.cursor },
     AthensConstant = { fg = colors.const },
     AthensError = { fg = colors.err },
     AthensFunction = { fg = colors.func },
     AthensKeyword = { fg = colors.keyword },
+    AthensPreProcessor = { fg = colors.preprocessor },
     AthensText = { fg = colors.fg1 },
     AthensType = { fg = colors.ltype },
+    AthensVar = { fg = colors.var },
     AthensFg0 = { fg = colors.fg0 }, --[[fix]]
     AthensFg1 = { fg = colors.fg1 },
     AthensFg2 = { fg = colors.fg2 },
@@ -394,7 +355,7 @@ local function get_groups()
     CurSearch = { link = "IncSearch" }, --[[fix]]
     QuickFixLine = { link = "AthensPurple" }, --[[fix]]
     Underlined = { fg = colors.blue, underline = config.underline }, --[[fix]]
-    StatusLine = { fg = colors.bg2, bg = colors.fg1, reverse = config.inverse }, --[[fix]]
+    StatusLine = { fg = colors.bg1, bg = colors.fg1, reverse = config.inverse }, --[[fix]]
     StatusLineNC = { fg = colors.bg1, bg = colors.fg4, reverse = config.inverse }, --[[fix]]
     WinBar = { fg = colors.fg4, bg = colors.bg0 }, --[[fix]]
     WinBarNC = { fg = colors.fg3, bg = colors.bg1 }, --[[fix]]
@@ -411,23 +372,23 @@ local function get_groups()
     SignColumn = config.transparent_mode and { bg = nil } or { bg = colors.bg1 }, --[[fix]]
     Folded = { fg = colors.gray, bg = colors.bg1, italic = config.italic.folds }, --[[fix]]
     FoldColumn = config.transparent_mode and { fg = colors.gray, bg = nil } or { fg = colors.gray, bg = colors.bg1 }, --[[fix]]
-    Cursor = { reverse = config.inverse }, --[[fix]]
+    Cursor = { link = "AthensCursor" },
     vCursor = { link = "Cursor" }, --[[fix]]
     iCursor = { link = "Cursor" }, --[[fix]]
     lCursor = { link = "Cursor" }, --[[fix]]
-    Special = { link = "AthensOrange" }, --[[fix]]
+    Special = { link = "AthensKeyword" },
     Comment = { fg = colors.comment, italic = config.italic.comments },
     Todo = { fg = colors.bg0, bg = colors.yellow, bold = config.bold, italic = config.italic.comments }, --[[fix]]
     Done = { fg = colors.orange, bold = config.bold, italic = config.italic.comments }, --[[fix]]
     Error = { fg = colors.err, bold = config.bold, reverse = config.inverse },
-    Statement = { link = "AthensRed" }, --[[fix]]
+    Statement = { link = "AthensText" },
     Conditional = { link = "AthensKeyword" },
-    Repeat = { link = "AthensRed" }, --[[fix]]
-    Label = { link = "AthensRed" }, --[[fix]]
+    Repeat = { link = "AthensKeyword" },
+    Label = { link = "AthensConstant" },
     Exception = { link = "AthensError" },
     Operator = { fg = colors.fg1, italic = config.italic.operators }, --[[fix]]
     Keyword = { link = "AthensKeyword" },
-    Identifier = { link = "AthensRed" }, --[[fix]]
+    Identifier = { link = "AthensVar" },
     Function = { link = "AthensFunction" },
     PreProc = { link = "AthensPreProcessor" },
     Include = { link = "AthensPreProcessor" },
@@ -437,6 +398,7 @@ local function get_groups()
     Constant = { link = "AthensConstant" },
     Character = { link = "AthensText" },
     String = { fg = colors.str, italic = config.italic.strings },
+    Fake = { fg = colors.fake, italic = config.italic.strings },
     Boolean = { link = "AthensText" },
     Number = { link = "AthensText" },
     Float = { link = "AthensText" },
@@ -493,12 +455,12 @@ local function get_groups()
     NvimTreeSymlink = { fg = colors.neutral_aqua }, --[[fix]]
     NvimTreeRootFolder = { fg = colors.neutral_purple, bold = true }, --[[fix]]
     NvimTreeFolderIcon = { fg = colors.neutral_blue, bold = true }, --[[fix]]
-    NvimTreeFileIcon = { fg = colors.light2 }, --[[fix]]
+    NvimTreeFileIcon = { fg = colors.fg2 },
     NvimTreeExecFile = { fg = colors.neutral_green, bold = true }, --[[fix]]
     NvimTreeOpenedFile = { fg = colors.bright_red, bold = true }, --[[fix]]
     NvimTreeSpecialFile = { fg = colors.neutral_yellow, bold = true, underline = true }, --[[fix]]
     NvimTreeImageFile = { fg = colors.neutral_purple }, --[[fix]]
-    NvimTreeIndentMarker = { fg = colors.dark3 }, --[[fix]]
+    NvimTreeIndentMarker = { fg = colors.bg3 },
     NvimTreeGitDirty = { fg = colors.neutral_yellow }, --[[fix]]
     NvimTreeGitStaged = { fg = colors.neutral_yellow }, --[[fix]]
     NvimTreeGitMerge = { fg = colors.neutral_purple }, --[[fix]]
@@ -1157,10 +1119,10 @@ local function get_groups()
     ["@function.builtin"] = { link = "Special" }, --[[fix]]
     ["@function.call"] = { link = "AthensText" },
     ["@function.macro"] = { link = "Macro" }, --[[fix]]
-    ["@function.method"] = { link = "Function" }, --[[fix]]
+    ["@function.method"] = { link = "AthensText" },
     ["@method"] = { link = "Function" }, --[[fix]]
     ["@method.call"] = { link = "AthensText" },
-    ["@constructor"] = { link = "Special" }, --[[fix]]
+    ["@constructor"] = { link = "AthensText" },
     ["@parameter"] = { link = "Identifier" }, --[[fix]]
     ["@keyword"] = { link = "AthensKeyword" }, --[[fix]]
     ["@keyword.conditional"] = { link = "Conditional" }, --[[fix]]
@@ -1247,7 +1209,7 @@ local function get_groups()
     ["@tag.delimiter"] = { link = "Delimiter" }, --[[fix]]
     ["@punctuation"] = { link = "Delimiter" }, --[[fix]]
     ["@macro"] = { link = "Macro" }, --[[fix]]
-    ["@structure"] = { link = "Structure" }, --[[fix]]
+    ["@Structure"] = { link = "Structure" }, --[[fix]]
     ["@lsp.type.class"] = { link = "@type" }, --[[fix]]
     ["@lsp.type.comment"] = { link = "@comment" }, --[[fix]]
     ["@lsp.type.decorator"] = { link = "@macro" }, --[[fix]]
