@@ -410,7 +410,7 @@ local function get_groups()
     Structure = { link = "AthensKeyword" },
     Typedef = { link = "AthensKeyword" },
     Pmenu = { fg = colors.fg1, bg = colors.bg2 }, --[[fix]]
-    PmenuSel = { fg = colors.bg2, bg = colors.blue, bold = config.bold }, --[[fix]]
+    PmenuSel = { fg = colors.bg2, bg = colors.neutral_orange, bold = config.bold },
     PmenuSbar = { bg = colors.bg2 }, --[[fix]]
     PmenuThumb = { bg = colors.bg4 }, --[[fix]]
     DiffDelete = { bg = colors.dark_red }, --[[fix]]
