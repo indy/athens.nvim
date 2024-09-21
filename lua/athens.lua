@@ -311,6 +311,7 @@ local function get_groups()
     AthensPurpleBold = { fg = colors.purple, bold = config.bold }, --[[fix]]
     AthensAqua = { fg = colors.aqua }, --[[fix]]
     AthensAquaBold = { fg = colors.aqua, bold = config.bold }, --[[fix]]
+    AthensOrangeNeutral = { fg = colors.neutral_orange },
     AthensOrange = { fg = colors.orange }, --[[fix]]
     AthensOrangeBold = { fg = colors.orange, bold = config.bold }, --[[fix]]
     AthensRedSign = config.transparent_mode and { fg = colors.red, reverse = config.invert_signs } --[[fix]]
@@ -327,6 +328,8 @@ local function get_groups()
       or { fg = colors.aqua, bg = colors.bg1, reverse = config.invert_signs }, --[[fix]]
     AthensOrangeSign = config.transparent_mode and { fg = colors.orange, reverse = config.invert_signs } --[[fix]]
       or { fg = colors.orange, bg = colors.bg1, reverse = config.invert_signs }, --[[fix]]
+    AthensOrangeNeutralSign = config.transparent_mode and { fg = colors.neutral_orange, reverse = config.invert_signs } --[[fix]]
+      or { fg = colors.neutral_orange, bg = colors.bg1, reverse = config.invert_signs }, --[[fix]]
     AthensRedUnderline = { undercurl = config.undercurl, sp = colors.red }, --[[fix]]
     AthensGreenUnderline = { undercurl = config.undercurl, sp = colors.green }, --[[fix]]
     AthensYellowUnderline = { undercurl = config.undercurl, sp = colors.yellow }, --[[fix]]
@@ -428,7 +431,7 @@ local function get_groups()
     DiagnosticSignWarn = { link = "AthensYellowSign" }, --[[fix]]
     DiagnosticUnderlineWarn = { link = "AthensYellowUnderline" }, --[[fix]]
     DiagnosticInfo = { link = "AthensBlue" }, --[[fix]]
-    DiagnosticSignInfo = { link = "AthensBlueSign" }, --[[fix]]
+    DiagnosticSignInfo = { link = "AthensOrangeNeutralSign" },
     DiagnosticUnderlineInfo = { link = "AthensBlueUnderline" }, --[[fix]]
     DiagnosticHint = { link = "AthensAqua" }, --[[fix]]
     DiagnosticSignHint = { link = "AthensAquaSign" }, --[[fix]]
