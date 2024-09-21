@@ -857,7 +857,7 @@ local function get_groups()
     csInterpolationAlignDel = { link = "AthensAquaBold" }, --[[fix]]
     csInterpolationFormat = { link = "AthensAqua" }, --[[fix]]
     csInterpolationFormatDel = { link = "AthensAquaBold" }, --[[fix]]
-    rustSigil = { link = "AthensOrange" }, --[[fix]]
+    rustSigil = { link = "AthensText" },
     rustEscape = { link = "AthensAqua" }, --[[fix]]
     rustStringContinuation = { link = "AthensAqua" }, --[[fix]]
     rustEnum = { link = "AthensAqua" }, --[[fix]]
