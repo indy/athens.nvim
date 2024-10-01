@@ -349,6 +349,8 @@ local function get_groups()
     NormalFloat = config.transparent_mode and { fg = colors.fg1, bg = nil } or { fg = colors.fg1, bg = colors.bg1 },
     NormalNC = config.dim_inactive and { fg = colors.fg0, bg = colors.bg1 } or { link = "Normal" },
     CursorLine = { bg = colors.bg1 },
+    CursorLineInsert = { bg = colors.bg0 },
+    CursorLineNormal = { bg = colors.bg1 },
     CursorColumn = { link = "CursorLine" },
     TabLineFill = { fg = colors.bg4, bg = colors.bg1, reverse = config.invert_tabline },
     TabLineSel = { fg = colors.green, bg = colors.bg1, reverse = config.invert_tabline },
@@ -1277,6 +1279,21 @@ Athens.load = function()
   for group, settings in pairs(groups) do
     vim.api.nvim_set_hl(0, group, settings)
   end
+
+  -- the CursorLine should change appearence when in Insert mode
+  local cursorline_group = vim.api.nvim_create_augroup("CursorLineMode", { clear = true })
+  vim.api.nvim_create_autocmd("InsertEnter", {
+                                 group = cursorline_group,
+                                 callback = function()
+                                    vim.api.nvim_set_hl(0, "CursorLine", { link = "CursorLineInsert" })
+                                 end,
+  })
+  vim.api.nvim_create_autocmd("InsertLeave", {
+                                 group = cursorline_group,
+                                 callback = function()
+                                    vim.api.nvim_set_hl(0, "CursorLine", { link = "CursorLineNormal" })
+                                 end,
+  })
 end
 
 return Athens
