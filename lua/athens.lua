@@ -67,53 +67,53 @@ Athens.config = {
 -- main athens color palette
 ---@class AthensPalette
 Athens.palette = {
-      bg0 = "#090909", --[[manually darkened]]
-      bg1 = "#1c1b19",
-      bg2 = "#242320",
-      bg3 = "#2c2b28",
-      bg4 = "#353430",
-      fg1 = "#958f88",
-      fg2 = "#7b766f",
-      fg3 = "#615d58",
-      fg4 = "#494642",
-      cursor = "#4f643c",
-      modeline = "#272f30",
-      clock12 = "#a28e59",
-      clock01 = "#899659",
-      clock02 = "#5a9f58",
-      clock03 = "#5c9c84",
-      clock04 = "#5e9a97",
-      clock05 = "#6098a8",
-      clock06 = "#6592ca",
-      clock07 = "#9c82d3",
-      clock08 = "#d067d2",
-      clock09 = "#d86aa7",
-      clock10 = "#dc6e79",
-      clock11 = "#bf8259",
-      bright_clock12 = "#ab8d00",
-      bright_clock01 = "#849900",
-      bright_clock02 = "#13a700",
-      bright_clock03 = "#00a37c",
-      bright_clock04 = "#00a09b",
-      bright_clock05 = "#009db8",
-      bright_clock06 = "#0095ef",
-      bright_clock07 = "#a773ff",
-      bright_clock08 = "#fb00fd",
-      bright_clock09 = "#fe3ab6",
-      bright_clock10 = "#fe4e68",
-      bright_clock11 = "#d37900",
-      dark_clock02 = "#0b7c00", --[[hsl=127, 100, 45]]
-      dark_clock05 = "#007589", --[[hsl=217, 100, 45]]
-      dark_clock10 = "#d5003b", --[[hsl= 71, 100, 45]]
-      err = "#c8575c",  --[[was error]]
-      var = "#958f88",
-      func = "#b65a52",
-      keyword = "#729599",
-      const = "#729599",
-      comment = "#536e6f",
-      str = "#6e9976",
-      ltype = "#a28c6d", --[[ was type ]]
-      preprocessor = "#5d9a91",
+  bg0 = "#090909", --[[manually darkened]]
+  bg1 = "#1c1b19",
+  bg2 = "#242320",
+  bg3 = "#2c2b28",
+  bg4 = "#353430",
+  fg1 = "#958f88",
+  fg2 = "#7b766f",
+  fg3 = "#615d58",
+  fg4 = "#494642",
+  cursor = "#4f643c",
+  modeline = "#272f30",
+  clock12 = "#a28e59",
+  clock01 = "#899659",
+  clock02 = "#5a9f58",
+  clock03 = "#5c9c84",
+  clock04 = "#5e9a97",
+  clock05 = "#6098a8",
+  clock06 = "#6592ca",
+  clock07 = "#9c82d3",
+  clock08 = "#d067d2",
+  clock09 = "#d86aa7",
+  clock10 = "#dc6e79",
+  clock11 = "#bf8259",
+  bright_clock12 = "#ab8d00",
+  bright_clock01 = "#849900",
+  bright_clock02 = "#13a700",
+  bright_clock03 = "#00a37c",
+  bright_clock04 = "#00a09b",
+  bright_clock05 = "#009db8",
+  bright_clock06 = "#0095ef",
+  bright_clock07 = "#a773ff",
+  bright_clock08 = "#fb00fd",
+  bright_clock09 = "#fe3ab6",
+  bright_clock10 = "#fe4e68",
+  bright_clock11 = "#d37900",
+  dark_clock02 = "#0b7c00", --[[hsl=127, 100, 45]]
+  dark_clock05 = "#007589", --[[hsl=217, 100, 45]]
+  dark_clock10 = "#d5003b", --[[hsl= 71, 100, 45]]
+  err = "#c8575c", --[[was error]]
+  var = "#958f88",
+  func = "#b65a52",
+  keyword = "#729599",
+  const = "#729599",
+  comment = "#536e6f",
+  str = "#6e9976",
+  ltype = "#a28c6d", --[[ was type ]]
+  preprocessor = "#5d9a91",
 }
 
 -- get a hex list of athens colors based on current bg and constrast config
@@ -319,6 +319,8 @@ local function get_groups()
     AthensPurpleUnderline = { undercurl = config.undercurl, sp = colors.purple },
     AthensAquaUnderline = { undercurl = config.undercurl, sp = colors.aqua },
     AthensOrangeUnderline = { undercurl = config.undercurl, sp = colors.orange },
+    InactiveWindow = { bg = colors.bg1 },
+    ActiveWindow = { bg = colors.bg0 },
     Normal = config.transparent_mode and { fg = colors.fg1, bg = nil } or { fg = colors.fg1, bg = colors.bg0 },
     NormalFloat = config.transparent_mode and { fg = colors.fg1, bg = nil } or { fg = colors.fg1, bg = colors.bg1 },
     NormalNC = config.dim_inactive and { fg = colors.fg0, bg = colors.bg1 } or { link = "Normal" },
@@ -1086,16 +1088,29 @@ Athens.load = function()
   -- the CursorLine should change appearence when in Insert mode
   local cursorline_group = vim.api.nvim_create_augroup("CursorLineMode", { clear = true })
   vim.api.nvim_create_autocmd("InsertEnter", {
-                                 group = cursorline_group,
-                                 callback = function()
-                                    vim.api.nvim_set_hl(0, "CursorLine", { link = "CursorLineInsert" })
-                                 end,
+    group = cursorline_group,
+    callback = function()
+      vim.api.nvim_set_hl(0, "CursorLine", { link = "CursorLineInsert" })
+    end,
   })
   vim.api.nvim_create_autocmd("InsertLeave", {
-                                 group = cursorline_group,
-                                 callback = function()
-                                    vim.api.nvim_set_hl(0, "CursorLine", { link = "CursorLineNormal" })
-                                 end,
+    group = cursorline_group,
+    callback = function()
+      vim.api.nvim_set_hl(0, "CursorLine", { link = "CursorLineNormal" })
+    end,
+  })
+
+  -- Set autocmds for window highlighting
+  vim.api.nvim_create_autocmd({ "WinEnter" }, {
+    callback = function()
+      vim.cmd("setlocal winhighlight=Normal:ActiveWindow")
+    end,
+  })
+
+  vim.api.nvim_create_autocmd({ "WinLeave" }, {
+    callback = function()
+      vim.cmd("setlocal winhighlight=Normal:InactiveWindow")
+    end,
   })
 end
 
