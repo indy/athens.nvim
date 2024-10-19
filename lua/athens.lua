@@ -76,6 +76,8 @@ Athens.palette = {
   fg2 = "#7b766f",
   fg3 = "#615d58",
   fg4 = "#494642",
+  fake = "#ff00ff",
+  insert = "#400004",
   cursor = "#4f643c",
   modeline = "#272f30",
   clock12 = "#a28e59",
@@ -140,8 +142,8 @@ local function get_colors()
       fg3 = p.fg3,
       fg4 = p.fg4,
 
-      fake = "#ff00ff",
-
+      fake = p.fake,
+      insert = p.insert,
       cursor = p.cursor,
       modeline = p.modeline,
       err = p.err,
@@ -185,8 +187,8 @@ local function get_colors()
       fg3 = p.fg3,
       fg4 = p.fg4,
 
-      fake = "#ff00ff",
-
+      fake = p.fake,
+      insert = p.insert,
       cursor = p.cursor,
       modeline = p.modeline,
       err = p.err,
@@ -324,9 +326,9 @@ local function get_groups()
     Normal = config.transparent_mode and { fg = colors.fg1, bg = nil } or { fg = colors.fg1, bg = colors.bg0 },
     NormalFloat = config.transparent_mode and { fg = colors.fg1, bg = nil } or { fg = colors.fg1, bg = colors.bg1 },
     NormalNC = config.dim_inactive and { fg = colors.fg0, bg = colors.bg1 } or { link = "Normal" },
-    CursorLine = { bg = colors.bg1 },
-    CursorLineInsert = { bg = colors.bg0 },
-    CursorLineNormal = { bg = colors.bg1 },
+    CursorLineInsert = { bg = colors.insert },
+    CursorLineNormal = { bg = colors.bg0 },
+    CursorLine = { link = "CursorLineNormal" },
     CursorColumn = { link = "CursorLine" },
     TabLineFill = { fg = colors.bg4, bg = colors.bg1, reverse = config.invert_tabline },
     TabLineSel = { fg = colors.green, bg = colors.bg1, reverse = config.invert_tabline },
